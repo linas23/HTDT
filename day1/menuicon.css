@@ -1,0 +1,39 @@
+.wrapper{
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: teal;
+    height: 50vh;
+}
+
+.ham{
+    margin: 50px 100px;
+}
+.ham div{
+    background: black;
+    height: 5px;
+    width: 40px;
+    margin: 5px;
+}
+
+.anim .bar{
+
+    background: black;
+    height: 4px ;
+    width: 33px;
+    margin: 5px;
+    transition: all .5s ease;
+    }
+
+.anim.cross .bar2{
+    opacity: 0;
+}
+.anim.cross .bar1{
+    transform: rotate(-45deg) translate(-5px,10px);
+}
+.anim.cross .bar3{
+    transform: rotate(45deg)translate(-2px,-8px);
+}

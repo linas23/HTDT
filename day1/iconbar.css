@@ -1,0 +1,66 @@
+.wrapper{
+    background: whitesmoke;
+    height: 50vh;
+    width: 50%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+/* horizontal bar */
+.icon-bar{
+    height: 75px;
+    background-color: rgba(0,0 ,0,0.7);
+    display: flex;
+}
+.icon-bar a{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: 0.5s ease;
+}
+.icon-bar a:hover{
+    background: black;
+}
+
+.icon-bar a i{
+    font-size: 2rem;
+}
+
+.icon-bar .active{
+    background: green;
+}
+
+/* vertical bar */
+.vertical-bar{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: rgba(0,0 ,0,0.7);
+    width: 100px;
+}
+.vertical-bar a{
+    height: 20%;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+}
+.vertical-bar a:hover{
+    background: black;
+}
+
+.vertical-bar a i{
+    font-size: 2rem;
+}
+.vertical-bar .active{
+    background: green;
+}

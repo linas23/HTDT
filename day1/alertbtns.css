@@ -1,0 +1,65 @@
+.wrapper{
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: whitesmoke;
+    height: 50vh;
+}
+button{
+    height: 50px;
+    width: 100px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+.success{
+    background-color: #4CAF50;
+}
+.success:hover{
+    background-color: rgb(64, 173, 67);
+}
+.info{
+    background-color: #4a65cfc5;
+}
+.info:hover{
+    background-color: #4a65cf;
+}
+.warning{
+    background-color: rgba(255, 115, 0, 0.767);
+}
+.warning:hover{
+    background-color: rgb(255, 115, 0);
+}
+.danger{
+    background-color: rgba(158, 9, 9, 0.788);
+}
+.danger:hover{
+    background-color: rgb(158, 9, 9);
+}
+.default{
+    background-color:rgba(141, 137, 137, 0.788);
+}
+.default:hover{
+    background-color:rgb(141, 137, 137);
+}
+button:active{
+    animation: changeBorderColors 4s infinite;
+}
+
+@keyframes changeBorderColors {
+    0%{
+        border: 5px solid red;
+    }
+    25%{
+        border:5px solid green;
+    }
+    50%{
+        border: 5px solid blue;
+    }
+    100%{
+        border:5px solid yellow;
+    }
+}

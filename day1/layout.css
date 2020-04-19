@@ -1,0 +1,27 @@
+.wrapper{
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: whitesmoke;
+    height: 80vh;
+}
+.row{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    height: 100%;
+}
+.column1{
+    background: rgb(146, 144, 144);
+}
+/* responsive */
+
+@media screen and (max-width:600px){
+    .row{
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 100%;
+    }
+}
