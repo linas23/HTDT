@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./slideShow.css">
+</head>
+
+<body>
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides ">
+            <div class="numbertext"> 2 / 3</div>
+            <img src="https://images.unsplash.com/photo-1587180171356-ab137444a1f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+        <div class="mySlides">
+            <div class="numbertext"></div>
+            <img src="https://images.unsplash.com/photo-1587298245246-f6c5da165151?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" style="width:100%">
+            <div class="text">Caption Two</div>
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext"></div>
+            <img src="https://images.unsplash.com/photo-1558981000-f294a6ed32b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" style="width:100%">
+            <div class="text">Caption Three</div>
+        </div>
+        <div class="mySlides">
+            <div class="numbertext"></div>
+            <img src="https://images.unsplash.com/photo-1587251491324-bc502254f2b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="">
+            <div class="text">Caption four</div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    <!-- The dots/circles -->
+    <div class="dots">
+        <div class="dot" onclick="currentSlide(1)"></div>
+        <div class="dot" onclick="currentSlide(2)"></div>
+        <div class="dot" onclick="currentSlide(3)"></div>
+        <div class="dot" onclick="currentSlide(4)"></div>
+    </div>
+
+    <script src="./slideShow.js"></script>
+</body>
+
+</html>

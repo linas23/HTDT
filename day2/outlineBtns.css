@@ -1,0 +1,52 @@
+.wrapper{
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: whitesmoke;
+    height: 50vh;
+}
+
+.wrapper>div{
+    margin: 20px;
+}
+
+button{
+    height: 50px;
+    width: 100px;
+    outline: none;
+}
+button:hover{
+    animation: bgslide 0.5s ease-in-out;
+}
+.rounded>button{
+    border-radius: 5px;
+}
+
+.success{border: 2px solid green;}
+.success:hover{color:white;background:green;}
+.info{border: 2px solid blue;}
+.info:hover{color:white;background:blue;}
+.warning{border: 2px solid orange;}
+.warning:hover{color:white;background:orange;}
+.danger{border: 2px solid red;}
+.danger:hover{color:white;background:red;}
+.default{border: 2px solid grey;}
+.default:hover{color:white;background:grey;}
+
+
+
+@keyframes bgslide {
+    from{
+        /* background-position: 0% 0%; */
+        opacity: 0.5;
+        margin-bottom: 10px;
+    }
+    to{
+        margin-bottom: 0px;
+        opacity: 1;
+        /* background-position: 80% 80%; */
+    }
+}

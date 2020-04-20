@@ -1,0 +1,49 @@
+*{{
+    margin: 0px;
+}}
+.wrapper{
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: whitesmoke;
+    height: 50vh;
+    text-align: center;
+}
+button{
+    height: 50px;
+    width: 100px;
+    outline: none;
+    border: none;
+    background: indigo;
+    color: white;
+}
+.dropdown{
+    display: inline-block;
+}
+
+.dropdown button{
+    width: 25px;
+    position: relative;
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+}
+.dropdown-content a{
+    display: block;
+    text-decoration: none;
+    background: indigo;
+    width: 100px;
+    padding: 10px 0;
+    color: white;
+}
+.dropdown-content a:hover{
+    background: rgb(126, 131, 131);
+}

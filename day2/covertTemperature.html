@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Temperature</title>
+    <style>
+        .conversion{
+            display: none;
+        }
+        .wrapper{
+            width: 80%;
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background: whitesmoke;
+            height: 50vh;
+            padding: 50px;
+        }
+        input,select{
+            height: 30px;
+            outline: none;
+        }
+        input{
+            width: 200px;
+            border: 1px solid red;
+            border-radius: 10px;
+            padding: 0 10px;
+        }
+        .conversion>div{
+            margin: 10px;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+
+    <p>
+        <h2>Enter the temperature and select the unit</h2><br>
+        <input id="temp" type="number" placeholder="enter the temperature"
+        oninput="temperatureConverter(this.value)"
+        onchange="temperatureConverter(this.value)">
+        <select name="" id="unit">
+            <option value="">Select the unit</option>
+            <option value="c">celcius</option>
+            <option value="f">fahrenheit</option>
+            <option value="k">kelvin</option>
+        </select>
+    </p>
+    <span id="error"></span>
+    <div class="conversion">
+        <div>Celsius: <span id="cel"></span></div>
+        <div>Fahrenheit: <span id="fah"></span></div>
+        <div>Kelvin: <span id="kel"></span></div>
+    </div>
+</div>
+
+</body>
+<script>
+    const conversion = document.querySelector('.conversion');
+    const unit = document.querySelector("#unit")
+    const error = document.querySelector("#error")
+    const cel = document.querySelector("#cel")
+    const fah = document.querySelector("#fah")
+    const kel = document.querySelector("#kel")
+    function temperatureConverter(temp){
+        error.innerHTML = ''
+        const _unit = unit.value;
+        temp = parseInt(temp);
+        switch(_unit){
+            case 'c': watchCelcius(temp);
+                      break;
+            case 'f': watchFahrenheit(temp);
+                        break;
+            case 'k': watchKelvin(temp);
+                     break;
+            default: error.innerHTML = 'select the unit to convert';
+                    break;
+        }
+        conversion.style.display='block'
+    }
+
+    function watchCelcius(temp){
+        cel.innerHTML = temp + "°C";
+        const f = temp * 1.8 +32 ;
+        fah.innerHTML = f + "°F";
+        const k = temp + 273.15 
+        kel.innerHTML =  k + "°K";
+    }
+    function watchFahrenheit(temp){
+        fah.innerHTML = temp + "°C";
+
+        const c = (temp-32)/1.8;
+        cel.innerHTML = c + "°F";
+
+        const k = ((temp-32)/1.8)+273.15
+        kel.innerHTML =  k + "°K";
+    }
+    function watchKelvin(temp){
+        kel.innerHTML = temp + "°C";
+
+        const c = temp-273.15
+        cel.innerHTML = c + "°F";
+
+        const f=((temp-273.15)*1.8)+32
+        fah.innerHTML =  f + "°K";
+    }
+</script>
+</html>

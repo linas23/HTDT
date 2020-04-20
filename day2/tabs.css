@@ -1,0 +1,48 @@
+.wrapper{
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: whitesmoke;
+    height: 50vh;
+    border: 1px solid red;
+}
+.tab{
+    height: 50px;
+    background: rgb(86, 97, 97);
+}
+button{
+    background: rgb(86, 97, 97);
+    color: white;
+    width: auto;
+    height: 100%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+button.active,button:hover{
+    background: rgb(119, 133, 133);
+}
+
+.tabcontent{
+    padding: 20px;
+    display: none;
+    animation: slideIn 1s ease;
+    overflow: hidden;
+}
+.tabcontent.active{
+    display: block;
+}
+
+@keyframes slideIn{
+    0%{
+        transform: translateX(-23px);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}

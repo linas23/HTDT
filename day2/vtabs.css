@@ -1,0 +1,49 @@
+.wrapper{
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: whitesmoke;
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-areas: "nav display";
+}
+
+.tab{
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+}
+.content{
+    grid-area: display;
+    padding: 0 20px;
+}
+button{
+    height: 60px;
+    outline: none;
+    border: none;
+    text-align: left;
+    font-size: 23px;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+button:hover{
+    background: rgb(136, 134, 134);
+    color: red;
+}
+.tabcontent{
+    display: none;
+    animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp{
+    0%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 column layout</title>
+    <style>
+        .row{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+        }
+        .column{
+            height: 400px;
+            background: grey;
+            border: 1px solid red;
+            padding: 20px;
+        }
+
+        @media screen and (max-width:600px){
+            .row{
+                grid-template-columns: 1fr;
+            }
+        }
+        @media screen and (min-width:600px){
+            .row{
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media screen and (min-width:1200px){
+            .row{
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="column"><h1>Column</h1><p>Lorem ipsum dolor sit amet.</p></div>
+        <div class="column"><h1>Column</h1><p>Lorem ipsum dolor sit amet.</p></div>
+        <div class="column"><h1>Column</h1><p>Lorem ipsum dolor sit amet.</p></div>
+    </div>
+</body>
+</html>
