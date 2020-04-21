@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 col Layout</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+        .container{
+            display: flex;
+            height: 100%;
+            flex-wrap: wrap;
+        }
+        .col{
+            min-height: 300px;
+            width: 25%;
+        }
+        .col:nth-child(odd){
+            background: #eee;
+        }
+        .col:nth-child(even){
+            background: #333;
+        }
+        @media screen and (max-width: 600px){
+            .col{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="col col1">column <p>Lorem ipsum dolor sit amet.</p></div>
+        <div class="col col2">column <p>Lorem ipsum dolor sit amet.</p></div>
+        <div class="col col3">column <p>Lorem ipsum dolor sit amet.</p></div>
+        <div class="col col4">column <p>Lorem ipsum dolor sit amet.</p></div>
+    </div>
+</body>
+</html>

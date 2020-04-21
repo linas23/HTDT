@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./responsiveNav.css">
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+  <a href="#home" class="active">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="javascript:void(0);" class="icon ham" >
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<script>
+    document.querySelector(".icon").addEventListener('click',(e)=>{
+        console.log(e.target.classList)
+        document.getElementById('myTopnav').classList.toggle('responsive');
+    })
+</script>
+</body>
+</html>

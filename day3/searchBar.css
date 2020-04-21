@@ -1,0 +1,62 @@
+*{
+    margin: 0px;
+}
+.topnav{
+    background: #123;
+    overflow: hidden;
+}
+.topnav a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 15px 20px;
+    float: left;
+    position: relative;
+}
+.topnav a:after{
+    position: absolute;
+    content:'';
+    bottom: 0;
+    left: 0;
+    border: 2px solid red;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+.topnav a:hover:after{
+    animation : Addborder 1s ease;
+}
+.topnav a:hover{
+    background: #aaa;
+    color: black;
+}
+.topnav input{
+    float: right;
+    margin: 15px;
+    width: 200px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    height: 20px;
+}
+
+@media screen and (max-width:600px){
+    .topnav a{
+        float: none;
+        display: block;
+    }
+    .topnav input{
+        float: none;
+        width: 100%;
+        margin: 10px 0px ;
+    }
+}
+@keyframes Addborder {
+    0%{
+        transform: scaleX(0);
+    }
+    100%{
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+}

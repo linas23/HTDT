@@ -1,0 +1,83 @@
+body{
+    padding: 100px;
+}
+button{
+    height: 75px;
+    width: 100px;
+    margin: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 2rem;
+}
+button:nth-child(odd){
+    background: orange;
+}
+button:nth-child(even){
+    background: red;
+}
+
+.first{
+    box-shadow: 0px 10px 0px gray;
+}
+.first:active{
+    box-shadow: 0px 5px 0px gray;
+    transform: translateY(5px);
+}
+
+.second{
+    color: white;
+    font-size: 1rem;
+    width: 125px;
+    transition: all 1s ease;
+}
+.second span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: -15px;
+    right: -20px;
+    font-size: 18px;
+}
+.second span{
+    display: inline-block;
+    position: relative;
+    transition: all .5s ease;
+}
+.second:hover{
+    padding-right: 25px;
+}
+.second:hover span:after{
+    opacity: 1;
+    right: -10px;
+}
+
+.third{
+    height: 100px;
+    width: 200px;
+    overflow: hidden;
+    position: relative;
+}
+.third:after{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: rgba(228, 226, 226, 0.596);
+    content:'';
+    transform: scale(0);
+    transform-origin: bottom left;
+}
+.third:active:after{
+    animation: ripple .2s ease;
+}
+
+@keyframes ripple{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

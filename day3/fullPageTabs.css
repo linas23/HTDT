@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+}
+.wrapper{
+    width: 100%;
+    background: whitesmoke;
+    height: 100%;
+}
+
+.tablink{
+    width: 25%;
+    float: left;
+}
+button{
+    height: 50px;
+    border: none;
+    outline: none;
+    margin: 0px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: darkgray;
+}
+
+.tabcontent{
+    /* position: relative; */
+    padding: 200px 100px ;
+    display: none;
+    animation: slideUp 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+#Home {background-color: red;}
+#News {background-color: green;}
+#Contact {background-color: blue;}
+#About {background-color: orange;}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(40px);
+    }
+    to {
+        transform: translateY(50px);
+    }
+}

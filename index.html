@@ -14,7 +14,7 @@
             color: white;
         }
         .wrapper{
-            width: 1000px;
+            width: 80%;
             margin: 0 auto;
         }
         .heading{
@@ -27,10 +27,13 @@
             justify-content: space-evenly;
         }
         .project{
-            border: 1px solid white;
-            width: 250px;
+            width: 25%;
             margin: 20px 0;
             padding: 20px;
+            animation: colorBorder 2s infinite;
+        }
+        .day{
+            font-size: 20px;
         }
         ul li{
             list-style-type: decimal;
@@ -39,6 +42,40 @@
         a{
             text-decoration: none;
             color: white;
+            font-size: 18px;
+        }
+        ul{
+            padding: 20px ;
+        }
+        @keyframes colorBorder {
+            0%{
+                color: red;
+                border: 2px solid white;
+            }
+            25%{
+                border: 2px solid green;
+
+            }
+            50%{
+                border: 2px solid yellow;
+
+            }
+            75%{
+                border: 2px solid red;
+
+            }
+            100%{
+                border: 2px solid blue;
+
+            }
+        }
+        @media screen and (max-width:600px){
+            .project{
+                width: 100%;
+            }
+            .wrapper{
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -48,6 +85,7 @@
             How To Do Things
         </div>
         <div class="projects">
+            
             <div class="project">
                 <div class="day">
                     Day 1
@@ -76,6 +114,26 @@
                     <li><a href="./day2/covertTemperature.html">Temperature Converter</a></li>
                 </ul>
             </div>
+            <div class="project">
+                <div class="day">
+                    Day 3
+                </div>
+                <ul>
+                    <li><a href="./day3/hoverVtabs.html">Hover to change tabs</a></li>
+                    <li><a href="./day3/topNacigationBar.html">Simple top Navigation Bar</a></li>
+                    <li><a href="./day3/fullPageTabs.html">Full Page Tabs</a></li>
+                    <li><a href="./day3/tabsWithIcon.html">Tabs with Icons</a></li>
+                    <li><a href="./day3/responsiveNav.html">Responsive Navbar</a></li>
+                    <li><a href="./day3/searchBar.html">Navbar with search bar</a></li>
+                    <li><a href="./day3/animateBtns.html">simple button animation</a></li>
+                    <li><a href="./day3/modalImages.html">Modal withour JS</a></li>
+                    <li><a href="./day3/modalWithJS.html">Modal with JS</a></li>
+                    <li><a href="./day3/searchMenu.html">Filter Search List</a></li>
+                    <li><a href="./day3/slideShowGallery.html">Slideshow Gallery</a></li>
+                    <li><a href="./day3/4colLayout.html">Simple 4 column layout</a></li>
+                </ul>
+            </div>
+            
             <!-- <div class="project">
                 <div class="day">
                     Day 1

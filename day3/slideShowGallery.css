@@ -1,0 +1,52 @@
+*{
+    margin:0px;
+}
+.container{
+    width:90%;
+    margin: 0 auto;
+    position: relative;
+    display: grid;
+    grid-template-rows: 75% 25%;
+    height: 100vh;
+}
+.prev,.next{
+    position: absolute;
+    top: 40%;
+    z-index: 99;
+    font-size: 18px; 
+    padding: 20px;  
+    cursor: pointer;
+}
+.prev:hover,.next:hover{
+    background: #123;
+    color: white;
+}
+.next{
+    right:0;
+}
+img{
+    height: 100%;
+}
+
+.row{
+    display: flex;
+    padding: 20px;
+}
+.row .column{
+    margin:0 10px;
+    cursor: pointer;
+}
+
+.numbertext{
+    position: absolute;
+    padding: 20px;
+    font-size:23px;
+}
+.demo{
+    transition: all 1s ease;
+}
+.demo.active{
+    background: red;
+    transform: scale(1.1);
+    opacity: 0.7;
+}

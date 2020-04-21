@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./searchMenu.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="search">
+            <h1>Menu</h1>
+            <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+            <ul id="myMenu">
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+                <li><a href="#">PHP</a></li>
+                <li><a href="#">Python</a></li>
+                <li><a href="#">jQuery</a></li>
+                <li><a href="#">SQL</a></li>
+                <li><a href="#">Bootstrap</a></li>
+                <li><a href="#">Node.js</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h1>
+                Page Content
+            </h1>
+
+            Start to type for a specific category/link inside the search bar to "filter" the search options.
+
+            Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..
+
+            Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..
+
+            Some text..
+        </div>
+    </div>
+    <script>
+        const ul = document.querySelector("#myMenu");
+        const li = ul.querySelectorAll('li');
+
+        function myFunction(){
+            const searchTerm = document.querySelector("#mySearch").value.toLowerCase();
+            li.forEach(l=>{
+                const text = l.querySelector('a').innerHTML.toLowerCase();
+                if(text.indexOf(searchTerm)== -1){
+                    l.style.display='none'
+                }else{
+                    l.style.display=""
+                }
+            })
+
+        }
+    </script>
+</body>
+</html>
