@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #more{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi
+        lorem egestas vitae scel
+        <span id="dots">...</span>
+        <span id="more">
+            erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce
+            luctus vestibulum augue ut aliquet.
+            Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed
+            ornare turpis. Donec vitae dui eget
+            tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor
+            porta.
+        </span></p>
+
+    <button onclick="myFunction()" id="myBtn">Read more</button>
+</body>
+<script>
+    const myBtn = document.querySelector("#myBtn");
+    const dots = document.querySelector("#dots");
+    const more = document.querySelector("#more")
+    function myFunction(){
+        const text = myBtn.textContent;
+        if(text.indexOf('more') > 0){
+            myBtn.textContent = 'Read less'
+            dots.style.display="none"
+            more.style.display='inline'
+        }else{
+            myBtn.textContent = 'Read more'
+            dots.style.display="inline"
+            more.style.display='none'
+        }
+
+    }
+</script>
+</html>

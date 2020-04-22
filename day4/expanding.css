@@ -1,0 +1,39 @@
+*{
+    margin:0px;
+}
+.row{
+    overflow: hidden;
+}
+.row .column{
+    text-align: center;
+    font-size: 23px;
+    color: white;
+    cursor: pointer;
+    float: left;
+    width: 33.33%;
+    padding: 50px 0;
+}
+.containerTab {
+    /* display: block; */
+    margin-top: 20px;
+    padding: 20px;
+    position: relative;
+    font-size: 2.3rem;
+    animation: slideUp .5s ease;
+}
+.containerTab .closebtn{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: white;
+    font-size: 2rem;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100px);
+    }
+    to{
+        transform: translate(0px);
+    }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myVideo{
+            position: fixed;
+            min-width: 100%;
+            min-height: 100%;
+            bottom: 0;
+            right: 0;
+        }
+        .content{
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            padding: 20px;
+            background: rgba(204, 204, 204, 0.349);
+            width: 100%;
+        }
+        .content button {
+            background: black;
+            outline: none;
+            border: none;
+            height: 25px;
+            width: 100px;
+            color:white;
+        }
+        .content button:hover{
+            background-color: #ccc;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- The video -->
+    <video autoplay  loop id="myVideo">
+        <source src="./Bob Marley buffalo soldier - YouTube[via torchbrowser.com].mp4" type="video/mp4">
+    </video>
+    
+    <!-- Optional: some overlay text to describe the video -->
+    <div class="content">
+        <h1>Heading</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam soluta facilis nemo vero nihil eligendi, fuga voluptates autem pariatur, libero reiciendis ipsam nisi..</p>
+        <!-- Use a button to pause/play the video with JavaScript -->
+        <button id="myBtn" onclick="pause()">Pause</button>
+        <button id="myBtn" onclick="play()">play</button>
+        <button id="myBtn" onclick="skip(10)"> >> 10s</button>
+        <button id="myBtn" onclick="skip(-10)"> << 10s </button>
+
+    </div>
+    <script>
+        const video =document.querySelector("video")
+        console.log(video)
+        const pause =() =>{
+            video.pause();
+        }
+        const play = ()=>{
+            video.play();
+        }
+        const skip = (inc)=>{
+            video.currentTime += inc;
+        }
+    </script>
+</body>
+</html>

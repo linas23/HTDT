@@ -1,0 +1,51 @@
+*{
+    margin: 0px;
+}
+
+.column{
+    background: #ccc;
+    height: 250px;
+}
+
+.column:nth-child(odd){
+    background: #aaa;
+}
+
+/* with float */
+/* .row .column{
+    float: left;
+    width: 25%;
+    height: 250px;
+}
+
+@media screen and (max-width:900px){
+    .row .column{
+        width: 50%;
+    }
+}
+@media screen and (max-width:600px){
+    .row .column{
+        width: 100%;
+    }
+} */
+
+/* with flexbox */
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.column{
+    /* width: 25%; */
+    flex: 1;
+}
+@media screen and (max-width:900px){
+    .row .column{
+        flex: 1;
+        flex-basis: 50%;
+    }
+}
+@media screen and (max-width:600px){
+    .row{
+        flex-direction: column;
+    }
+}

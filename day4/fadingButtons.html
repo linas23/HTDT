@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fading buttons</title>
+    <style>
+        button{
+            height: 50px;
+            width:100px;
+            margin: 5px;
+            background: orangered;
+            transition: all 1s ease;
+        }
+        .fadein{
+            display: inline-block;
+            opacity: .5;
+            transition: all 1s ease;
+        }
+        .fadein:hover{
+            opacity: 1;
+        }
+        .fadeOut{
+            display: inline-block;
+            opacity: 1;
+            transition: all 1s ease;
+        }
+        .fadeOut:hover{
+            opacity: .5;
+        }
+        .fadeBg button{
+            transition: all 1s ease;
+        }
+        .fadeBg:hover button{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="fadein">
+        <button>Fade In</button>
+    </div>
+    <div class="fadeOut">
+        <button>Fade Out</button>
+    </div>
+    <div class="fadeBg">
+        <button>Fade BG</button>
+    </div>
+</body>
+</html>
