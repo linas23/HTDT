@@ -1,0 +1,49 @@
+.notification{
+    position: relative;
+    background: #111;
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+}
+body{
+    padding: 50px;
+}
+.badge{
+    position: absolute;
+    top: -15px;
+    right: -10px;
+    padding: 5px 10px;
+    background: rgb(7, 204, 138);
+    border-radius: 50%;
+}
+.notification:hover{
+    background:rgb(7, 204, 138) ;
+}
+
+button{
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    background-color: royalblue;
+    color: white;
+}
+button:hover{
+    background-color: blue;
+}
+
+a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    color: white;
+    margin: 5px 0;
+}
+.previous{
+    background-color: indigo;
+}
+.next{
+    background-color: #00dd00;
+}
+.round{
+    border-radius: 50%;
+}

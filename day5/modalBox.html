@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+        .modal{
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0px;
+            display: none;
+        }
+        .modal-content{
+            width: 80%;
+            margin: 10% auto;
+            position: relative;
+            animation: haha 1s ease;
+        }
+        .header{
+            padding: 20px;
+            background: red;
+        }
+        p{
+            height: 100px;
+            padding: 20px;
+            background-color: white;
+        }
+        .footer{
+            padding: 20px;
+            background: red;
+        }
+        .close{
+            position: absolute;
+            right: 30px;
+            top: 10px;
+            color: white;
+            font-size: 3rem;
+            cursor: pointer;
+        }
+        @keyframes haha {
+            from{
+                transform: translateY(-350px);
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        How To Create a Modal Box
+        modal is a dialog box/popup window that is displayed on top of the current page:
+    </h1>
+    <button onclick="openModal()">
+        Open Modal
+    </button>
+    <div class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="header">
+                <h1>hello header</h1>
+            </div>
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Some text in the Modal..</p>
+            <div class="footer">
+               <h1> hello footer</h1>
+            </div>
+        </div>
+    </div>
+    <script>
+        const modal = document.querySelector(".modal");
+        const openModal = () => {
+            modal.style.display = 'block'
+        }
+
+        const closeModal = ()=>{
+            modal.style.display = 'none'
+        }
+        window.onclick = function (e){
+            // console.log(e.target == modal)
+            if(e.target == modal){
+                modal.style.display = 'none'
+            }
+        }
+    </script>
+</body>
+
+</html>

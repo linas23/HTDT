@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .container{
+            width: 50%;
+            margin: 0 auto;
+        }
+        
+        input,table{
+            width: 100%;
+            height: 100%;
+        }
+        
+        input{
+            margin-bottom: 20px;
+            height: 30px;   
+        }
+        tr{
+            background: #ccc;
+            border-bottom: 1px solid #222;
+            cursor: pointer;
+            height: 40px;
+        }
+        table{
+            border-collapse: collapse;
+            border: 1px solid #123;
+        }
+        .header{
+            border: 1px solid rgb(58, 57, 57);
+        }
+        tr:hover{
+            background: #ddd;
+        }
+        th{
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+        <table id="myTable" border="0">
+            <tr class="header">
+                <th style="width:60%;">Name</th>
+                <th style="width:40%;">Country</th>
+            </tr>
+            <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Germany</td>
+            </tr>
+            <tr>
+                <td>Berglunds snabbkop</td>
+                <td>Sweden</td>
+            </tr>
+            <tr>
+                <td>Island Trading</td>
+                <td>UK</td>
+            </tr>
+            <tr>
+                <td>Koniglich Essen</td>
+                <td>Germany</td>
+            </tr>
+            <tr>
+                <td>Laughing Bacchus Winecellars</td>
+                <td>Germany</td>
+            </tr>
+        </table>
+    </div>
+<script>
+
+    
+
+    const myFunction =  ()=>{
+        const searchText = document.querySelector("#myInput").value.toLowerCase();
+        const trs = document.querySelectorAll("tr")
+
+        for(let i = 1 ; i< trs.length ; i++){
+            const td = trs[i].querySelectorAll("td");
+            if(td[0].textContent.toLowerCase().indexOf(searchText) < 0){
+                trs[i].style.display='none'
+            }else{
+                trs[i].style.display=''
+            }
+        }
+    }
+
+
+</script>
+</body>
+
+</html>

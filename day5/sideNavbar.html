@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./sideNavbar.css">
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div>
+      
+      <!-- Use any element to open the sidenav -->
+      <span onclick="withoutAnimation()">sidenav overlay without animation</span>
+      <span onclick="pushOffCanvas()">sidenav push(off-canvas)</span>
+      <span onclick="pushWithOpacity()">sidenav push w/opacity</span>
+      <span onclick="fullWidth()">sidenav full-width</span>
+
+      <h1>The closing button may now work as expected..to make it work..i have to create each sidenav with different files.</h1>
+
+      <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+      <div id="main">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat cum 
+        olor aspernatur optio magni assumenda et ducimus reprehenderit 
+        asperiores voluptatem, commodi vero natus ratione debitis, maxime
+         dicta minus fuga repudiandae voluptatibus unde? Laborum aperiam,
+          commodi autem modi adipisci in reprehenderit nihil maiores, rerum,
+           quas quae dignissimos excepturi dicta vitae saepe unde id sunt 
+           voluptate eveniet facere voluptatem? Repudiandae excepturi nam 
+           laboriosam ullam a beatae tempora dolores aut atque dolorem, est
+            doloremque exercitationem qui totam, consequuntur quibusdam 
+            quidem error reprehenderit, minima ipsum eum maxime? Obcaecati
+             ut amet voluptate ea corrupti
+         mollitia sint, eum illo nam libero nobis, minus soluta, a eveniet.
+      </div>
+
+      <script src="./sideNavbar.js"></script>
+</body>
+</html>
