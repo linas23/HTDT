@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Gallery</title>
+    <link rel="stylesheet" href="./tabGallery.css">
+</head>
+
+<body>
+    <!-- The grid: four columns -->
+    <div class="row">
+        <div class="column">
+            <img src="https://images.unsplash.com/photo-1587567132533-50ab056caa59?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                alt="hello caption" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="https://images.unsplash.com/photo-1587425644330-f49605df11fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                alt="hello bottle" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="https://images.unsplash.com/photo-1587560436460-a3b4b704185d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                alt="hello flower" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="https://images.unsplash.com/photo-1587497428439-43ae701a6462?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                alt="hello grass" onclick="myFunction(this);">
+        </div>
+    </div>
+
+    <!-- The expanding image container -->
+    <div class="container">
+        <!-- Close the image -->
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+
+        <!-- Expanded image -->
+        <img id="expandedImg" >
+        <!-- Image text -->
+        <div id="imgtext"></div>
+    </div>
+    <script>
+        const bigImage = document.querySelector("#expandedImg");
+        const imgText = document.querySelector("#imgtext")
+        const container = document.querySelector(".container")
+
+        function myFunction (el){
+            bigImage.src = el.src;
+            imgText.textContent = el.alt;
+            container.style.display='block'
+        }
+
+    </script>
+</body>
+
+</html>

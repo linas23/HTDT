@@ -1,0 +1,65 @@
+.wrapper{
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: whitesmoke;
+    height: 50vh;
+    display: flex;
+    padding: 20px;
+}
+.wrapper>div{
+    /* width: 50%; */
+
+}
+img{
+    width: 100%;
+    backface-visibility: hidden;
+    transition: .5s;
+}
+.container{
+    position: relative;
+    width:50%;
+}
+.opacity:hover img{
+    opacity: 0.5;
+}
+.opacity:hover .middle{
+    opacity: 1 !important;
+    z-index: 1;
+}
+.middle{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    background: green;
+    height: 20px;
+    padding: 8px 16px;
+    color: white;
+}
+
+.overlay{
+    position: absolute;
+    top:0;
+    left:0;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    color: white;
+    background: #123;
+    transition: 1s;
+}
+.text{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.fade:hover .overlay{
+    opacity: 1;
+}

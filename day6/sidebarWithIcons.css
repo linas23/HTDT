@@ -1,0 +1,36 @@
+.wrapper{
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: whitesmoke;
+    height: 50vh;
+    overflow: hidden;
+}
+
+.sidebar{
+    position: fixed;
+    width: 160px;
+    padding-top: 50px ;
+    background: #123;
+    height: 100%;
+    overflow-x: hidden;
+}
+.sidebar a{
+    display:block;
+    text-decoration: none;
+    color: gray;
+    padding: 10px;
+    font-size: 1.5rem;
+}
+.sidebar a:hover{
+    color: white;
+}
+#main{
+    padding: 20px;
+    margin-left: 160px;
+    overflow: scroll;
+    height: 100%;
+}

@@ -1,0 +1,29 @@
+*{
+    margin: 0px;
+}
+#main{
+    transition: margin-left 1s ease;
+}
+#mySidenav{
+    position: absolute;
+    top:0px;
+    left: 0px;
+    background: #123;
+    height: 100%;
+    width:0;
+    overflow-x: hidden;
+    padding-top: 50px;
+    transition: all 1s ease;
+}
+#mySidenav a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    margin: 20px;
+    font-size: 2rem;
+}
+.closebtn{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}

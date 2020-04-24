@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./offCanvasMenu.css">
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div>
+      
+      <!-- Use any element to open the sidenav -->
+      <span onclick="openNav()"><button>Open nav</button></span>
+      <span onclick="openNavwithBlur()"><button>Open nav with blur</button></span>
+      
+      <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+      <div id="main">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nam ut aperiam optio ratione ea, culpa nulla temporibus nisi quidem, enim voluptatem 
+        iste! Nobis praesentium similique repellat perspiciatis excepturi nam?
+      </div>
+      <script>
+          const mySidenav = document.querySelector("#mySidenav")
+
+          const openNav = ()=>{
+              mySidenav.style.width='250px'
+              document.getElementById('main').style.marginLeft='250px'
+          }
+
+          const closeNav = ()=>{
+            mySidenav.style.width='0px'
+            document.getElementById('main').style.marginLeft='0px'
+            document.body.style.background='white'
+          }
+
+          const openNavwithBlur = ()=>{
+            mySidenav.style.width='250px'
+            document.getElementById('main').style.marginLeft='250px'
+            document.body.style.background='rgba(0,0,0,0.5)'
+          }
+           
+    </script>
+</body>
+</html>

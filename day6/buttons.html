@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buttonss</title>
+    <style>
+        .wrapper {
+            width: 80%;
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: whitesmoke;
+            height: 50vh;
+            overflow: auto;
+        }
+        button{
+            border: none;
+            outline: none;
+        }
+        .block{
+            width: 100%;
+            height: 30px;
+            background: #123;
+            color: white;
+        }
+        .btn{
+            background: transparent;
+            padding: 8px 16px;
+            font-size: 1.5rem;
+        }
+        .btn:hover{
+            background: rgb(157, 159, 161);
+        }
+        .success{color:green}
+        .info{color:orange}
+        .warning{color:orangered}
+        .danger{color:red}
+        .default{color:#123}
+
+        .button{
+            height: 50px;
+            width: 50px;
+            background: #123;
+            color:white;
+            margin: 5px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <button type="button" class="block">Block Button</button><br><br>
+        <button class="btn success">Success</button>
+        <button class="btn info">Info</button>
+        <button class="btn warning">Warning</button>
+        <button class="btn danger">Danger</button>
+        <button class="btn default">Default</button>
+        <br><br>
+        <button class="button button1" style="border-radius:2px">2px</button>
+        <button class="button button2" style="border-radius:4px">4px</button>
+        <button class="button button3" style="border-radius:8px">8px</button>
+        <button class="button button4" style="border-radius:12px">12px</button>
+        <button class="button button5" style="border-radius:50%">50%</button>
+        <br><br>
+    </div>
+</body>
+
+</html>

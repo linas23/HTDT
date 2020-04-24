@@ -1,0 +1,35 @@
+.wrapper{
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: whitesmoke;
+    height: 50vh;
+    overflow: hidden;
+}
+
+#mySidenav{
+    position: absolute;
+    width: 120px;
+    height: 100%;
+}
+
+#mySidenav a{
+    text-align: center;
+    padding: 15px 0px;
+    display:block;
+    text-decoration: none;
+    color: white;
+    margin: 2px;
+    transform: translateX(-85px);
+    border-radius: 10px;
+    transition: .5s;
+}
+#mySidenav a:hover{
+    transform: translateX(-25px);
+}
+#main{
+    margin-left:8rem;
+}

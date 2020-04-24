@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+}
+
+#myHeader{
+    text-align: center;
+    padding: 25px;
+}
+.btn{
+    padding: 5px 10px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+.btn.active{
+    background: gray;
+}
+
+.row{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 10px;
+}
+.column{
+    width: 100%;
+}
+img{
+    margin-top: 8px;
+    width: 100%;
+    object-fit: cover;
+}
+img:hover{
+    opacity: 0.8;
+}
