@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .vertical-menu,.overflow-menu{
+            width: 250px;
+        }
+        .vertical-menu a,.overflow-menu a{
+            display: block;
+            text-decoration: none;
+            color:black;
+            background:#ccc;
+            padding: 10px 20px ;
+        }
+        a.active{
+            background: #00aa11;
+        }
+        a:hover{
+            background: #888;
+        }
+        a.active:hover{
+            background: #00aa11;
+        }
+        .overflow-menu{
+            margin: 20px 0;
+            height: 300px;
+            overflow-y: auto;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="vertical-menu">
+        <a href="#" class="active">Home</a>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+        <a href="#">Link 4</a>
+      </div>
+    <div class="overflow-menu">
+        <a href="#" class="active">Home</a>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+        <a href="#">Link 4</a>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+        <a href="#">Link 4</a>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+        <a href="#">Link 4</a>
+      </div>
+</body>
+</html>

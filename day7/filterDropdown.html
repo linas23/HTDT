@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter dropdown</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .dropbtn{
+            padding: 15px;
+            font-size: 15px;
+            background: rgb(128, 236, 128);
+            border: none;
+        }
+        a,i{
+            text-decoration: none;
+            color: black;
+            display: block;
+        }
+        .dropdown-content{
+            display: none;
+        }
+        .dropdown-content.show{
+            display: block;
+            width: 200px;
+            background: #ccc;
+        }
+        input{
+            width: 98%;
+            height: 30px;
+            outline: none;
+        }
+        #myDropdown a{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn" href="#">  Dropdown  <i class="fa fa-caret-down"></i></button>
+        <div id="myDropdown" class="dropdown-content show">
+          <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+          <a href="#about">About</a>
+          <a href="#base">Base</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+          <a href="#custom">Custom</a>
+          <a href="#support">Support</a>
+          <a href="#tools">Tools</a>
+        </div>
+      </div>
+      <script>
+          const dropDown = document.querySelector("#myDropdown");
+          const input = document.querySelector("#myInput");
+          const blocks = document.querySelectorAll("#myDropdown a")
+          function myFunction(){
+                dropDown.classList.toggle('show')
+                
+          }
+          function filterFunction(){
+                const Search = input.value.toLowerCase();
+                blocks.forEach(block=>{
+                    const text = block.textContent.toLowerCase();
+                    if(text.indexOf(Search) != -1){
+                        block.style.display='';
+                    }else{
+                        block.style.display='none'
+                    }
+                })
+          }
+      </script>
+</body>
+</html>

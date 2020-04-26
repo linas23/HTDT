@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+        .timeline{
+            width: 75%;
+            margin: 0 auto;
+            /* height: 80vh; */
+            background: indigo;
+            transform: translateY(10%);
+            position: relative;
+        }
+        /* The actual timeline (the vertical ruler) */
+
+        .timeline::after{
+            position: absolute;
+            content:'';
+            background: white;
+            width: 5px;
+            height: 100%;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+        }
+
+        .container{
+            position: relative;
+            width: 50%;
+            padding: 10px 40px;
+        }
+
+        .container::after{
+            position: absolute;
+            content: '';
+            height: 23px;
+            width: 23px;
+            background: white;
+            border-radius: 50%;
+            z-index: 1;
+            right: -17px;
+            top:15px;
+            border: 4px solid orange;
+        }
+
+        .left{
+            left:0%;
+        }
+
+        .right{
+            left: 50%;
+        }
+
+        .right::after{
+            left: -15px;
+        }
+
+        .left::before{
+            content:'';
+            position: absolute;
+            height: 0;
+            width: 0;
+            right:30px;
+            top:20px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+        .right::before{
+            content:'';
+            position: absolute;
+            height: 0;
+            width: 0;
+            left:30px;
+            top:20px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        .content{
+            padding: 20px 30px;
+            background: white;
+            position: relative;
+            border-radius: 6px;
+        }
+
+        /* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+/* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+
+/* Full-width containers */
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+/* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+/* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+    left: 15px;
+  }
+
+/* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="timeline">
+        <div class="container left">
+          <div class="content">
+            <h2>2017</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias perspiciatis et voluptatem tempora nisi ea, architecto ad eaque repudiandae ex, voluptas optio laudantium.</p>
+          </div>
+        </div>
+        <div class="container right">
+          <div class="content">
+            <h2>2016</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam perferendis veniam labore architecto omnis beatae consequuntur nihil quae recusandae voluptatem, deserunt natus minima qui, aliquid ullam tenetur autem eos nostrum?</p>
+          </div>
+        </div>
+        <div class="container left">
+          <div class="content">
+            <h2>2015</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem facilis exercitationem nulla adipisci 
+                quidem quisquam perferendis, laudantium, laboriosam obcaecati alias, dicta quia modi.</p>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
