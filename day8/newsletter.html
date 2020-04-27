@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsLetter</title>
+    <style>
+        form{
+            /* margin: 20vh; */
+            background: whitesmoke;
+            padding: 2px;
+        }
+        .container{
+            padding: 20px;
+
+        }
+       
+        input[type="text"],input[type="submit"]{
+            display: inline-block;
+            width: 100%;
+            margin: 8px 0;
+            padding: 12px;
+            box-sizing: border-box;
+        }
+        input[type="checkbox"]{
+            margin-top: 16px;
+        }
+        input[type="submit"]{
+            background: #11aa23;
+            border: none;
+            outline: none;
+            font-size: 1.25rem;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <form action="action_page.php">
+        <div class="container">
+          <h2>Subscribe to our Newsletter</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore architecto culpa vitae sed eos et nulla impedit? Officiis qui impedit doloremque minima quas?</p>
+        </div>
+      
+        <div class="container" style="background-color:white">
+          <input type="text" placeholder="Name" name="name" required>
+          <input type="text" placeholder="Email address" name="mail" required>
+          <label>
+            <input type="checkbox" checked="checked" name="subscribe"> Daily Newsletter
+          </label>
+        </div>
+      
+        <div class="container">
+          <input type="submit" value="Subscribe">
+        </div>
+      </form>
+</body>
+</html>

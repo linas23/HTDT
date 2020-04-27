@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        .container {
+            margin: 5vh auto;
+            width: 25%;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid #123;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            height: 20%;
+            width: 100%;
+            background-color: rgba(17, 34, 51, 0.74);
+            transform: scaleX(0);
+            transform-origin: bottom left;
+            transition: .75s;
+        }
+
+        .text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .container:hover .overlay {
+            transform: scaleX(1);
+            transform-origin: bottom right;
+        }
+
+        .iconoverlay{
+            height: 100%;
+            background:indigo;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity .75s ease;
+            transform-origin: right;
+        }
+
+        a{
+            color: white;
+        }
+        .icon:hover .iconoverlay{
+            opacity: 1;
+            transform-origin: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        Image Overlay Title
+    </h1>
+    <h2>
+        Hover over the image to see the overlay effect.
+    </h2>
+    <div class="container">
+        <img src="./HTDT.png" alt="Avatar" class="image">
+        <div class="overlay">
+            <div class="text">Hello World</div>
+        </div>
+    </div>
+
+    <br>
+    <h1>
+        Image Overlay Icon
+    </h1>
+    <h2>
+        Hover over the image to see the overlay effect.
+    </h2>
+    <div class="container icon">
+        <img src="HTDT.png" alt="Avatar" class="image">
+        <div class="iconoverlay">
+            <a href="#" class="icon" title="User Profile">
+                <i class="fa fa-4x fa-user"></i>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

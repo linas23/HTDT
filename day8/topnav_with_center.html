@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .topnav{
+            display: flex;
+            justify-content: space-between;
+            background: #123;
+        }
+        .topnav-left{
+            order: -1;
+        }
+        a{
+            text-decoration: none;
+            padding: 15px;
+            display: inline-block;
+            color: white;
+            font-size: 1.3rem;
+        }
+        .active{
+            background: #11dd22;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top navigation -->
+    <div class="topnav">
+        <!-- Centered link -->
+        <div class="topnav-centered">
+            <a href="#home" class="active">Home</a>
+        </div>
+
+        <!-- Left-aligned links (default) -->
+        <div class="topnav-left">
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <!-- Right-aligned links -->
+        <div class="topnav-right">
+            <a href="#search">Search</a>
+            <a href="#about">About</a>
+        </div>
+
+    </div>
+</body>
+
+</html>

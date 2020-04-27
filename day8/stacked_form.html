@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            background: whitesmoke;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        input,select{
+            margin: 8px 0;
+            height: 40px;
+            outline: none;
+        }
+        label{
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        input[type="submit"]{
+            background: #00b300;
+            border: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <form action="/action_page.php">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+      
+        <input type="submit" value="Submit">
+      </form>
+</body>
+</html>

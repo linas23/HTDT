@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        img{
+            width: 100%;
+        }
+        body{
+            text-align: center;
+        }
+        .container{
+            margin: 15vh auto;
+            width: 25%;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid #123;
+        }
+        .overlay{
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #123;
+            transform: scale(0);
+            transition: .75s;
+        }
+        .text{
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            height: 100%;
+            font-size: 1.8rem;
+            color: white;           
+        }
+        .container:hover .overlay{
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Image Hover Fullscreen Zoom
+    </h1>
+    <h2>
+        Hover over the image to see the zoom effect.
+    </h2>
+    <div class="container">
+        <img src="./HTDT.png" alt="Avatar" class="image">
+        <div class="overlay">
+          <div class="text">Hello World</div>
+        </div>
+      </div>
+</body>
+</html>

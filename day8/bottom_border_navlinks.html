@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 100px;
+        }
+        .topnav{
+            background: #123;
+            overflow: hidden;
+        }
+        a{
+            display: inline-block;
+            padding: 20px;
+            color: white;
+            text-decoration: none;
+            transition: all .5s ease;
+        }
+        a.active{
+            border-bottom: 2px solid red;
+        }
+        .straight a:hover{
+            background: #234564;
+            border-bottom: 2px solid red;
+        }
+        .slide a{
+            position: relative;
+        }
+        .slide a::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right:0;
+            width: 100%;
+            transform-origin: left;
+            transform: scaleX(0);
+            height: 2px;
+            background-color: red;
+            transition: all .75s ease;
+        }
+
+        .slide a:hover::after{
+            transform: scaleX(1);
+            transform-origin: right;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="topnav straight">
+        <a href="#home" class="active">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <br>
+    <div class="topnav slide">
+        <a href="#home" class="active">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+    </div>
+  
+</body>
+</html>

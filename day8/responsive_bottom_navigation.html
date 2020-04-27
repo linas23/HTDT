@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .wrapper{
+            height: 60vh;
+            width: 80%;
+            margin: 0 auto;
+            background: whitesmoke;
+            margin-top: 20vh;
+            position: relative;
+        }
+        .navbar{
+            background: #123456;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            overflow: hidden;
+        }
+        a{  
+            float: left;
+            display:block;
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            font-size: 1.25rem;
+        }
+        a:hover{
+            background: #345678;
+        }
+        .icon{
+            display: none;
+        }
+        .active{
+            background: rgb(20, 30, 41);
+        }
+
+
+        @media screen and (max-width:800px){
+            a:not(:first-child){
+                display: none;
+            }
+            .navbar.open a{
+                float: none;
+                display:block;
+            }
+            a.icon{
+                position: absolute;
+                right: 0;
+                display: block;
+                bottom: 0;
+            }
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>
+            Responsive Bottom Navbar Example <br>
+            Resize the browser window to see how it works.
+        </h2>
+        <div class="navbar " id="myNavbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+    </div>
+
+
+    <script>
+        const icon = document.querySelector(".icon");
+        const navbar = document.querySelector("#myNavbar");
+
+        const myFunction = ()=>{
+            navbar.classList.toggle('open')
+        }
+    
+
+
+    </script>
+</body>
+</html>
