@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hero-image {
+            background-image: linear-gradient(to right,rgba(0,0,0,.23),rgba(0,0,0,.5)),url("https://images.unsplash.com/photo-1498019559366-a1cbd07b5160?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1040&q=80");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            position: relative;
+        }
+        .hero-text{
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: white;
+        }
+        button{
+            border: none;
+            outline: none;
+            background: #11ffaa;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero-image">
+        <div class="hero-text">
+            <h1 style="font-size:50px">I am John Doe</h1>
+            <p>And I'm a Photographer</p>
+            <button>Hire me</button>
+        </div>
+    </div>
+
+    <p>Page Content..</p>
+</body>
+
+</html>

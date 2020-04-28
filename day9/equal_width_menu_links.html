@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .navbar{
+            background: #123;
+            overflow: hidden;
+        }
+        a{
+            float: left;
+            width: 25%;
+            text-decoration: none;
+            font-size: 2rem;
+            padding: 10px 0;
+            text-align: center;
+            color: white;
+        }
+        .active{
+            background-color: #11dd11;
+        }
+        @media screen and (max-width:600px){
+            a{
+                float: none;
+                display:block;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- The navigation menu -->
+    <div class="navbar">
+        <a class="active" href="#">Home</a>
+        <a href="#">Search</a>
+        <a href="#">Contact</a>
+        <a href="#">Login</a>
+    </div>
+</body>
+
+</html>
