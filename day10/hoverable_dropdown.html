@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 100px;
+        }
+
+        button {
+            width: 100px;
+            height: 35px;
+            background: orangered;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            color: white;
+        }
+
+        .dropdown:hover .dropdown-content,.dropdown:hover .dropdown-content-float {
+            display: block;
+        }
+
+        .dropdown-content ,.dropdown-content-float{
+            display: none;
+        }
+
+        .dropdown-content a,.dropdown-content-float a {
+            width: 100px;
+            display: block;
+            text-decoration: none;
+            padding: 10px 0;
+            background-color: whitesmoke;
+        }
+
+        .dropdown-content a:hover ,.dropdown-content-float a:hover{
+            background: black;
+            color: white;
+        }
+
+        .dropdown{
+            position: relative;
+        }
+
+        .dropdown-content-float{
+            position: absolute;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+
+    <h2>Aligned Dropdown Content</h2>
+    <p>Determine whether the dropdown content should go from left to right or right to left with the left and right
+        properties.</p>
+
+    <div class="dropdown" style="float:left;">
+        <button class="dropbtn" style="width: 50px;">Left</button>
+        <div class="dropdown-content-float" style="left:0;">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+
+    <div class="dropdown" style="float:right;">
+        <button class="dropbtn" style="width: 50px;">Right</button>
+        <div class="dropdown-content-float" style="right:0;">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+</body>
+
+</html>

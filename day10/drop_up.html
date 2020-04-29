@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dropup{
+            position: relative;
+        }
+        .dropbtn{
+            width: 100px;
+            padding: 10px;
+            border: none;
+            outline: none;
+            background: orange;
+            color: aliceblue;
+        }
+        .dropup-content a{
+            display: block;
+            padding: 10px 0;
+            text-decoration: none;
+            background: whitesmoke;
+            width: 100px;
+            color: black;
+        }
+        .dropup-content a:hover{
+            background: black;
+            color: white;
+        }
+        .dropup-content{
+            display: none;
+            position: absolute;
+            top: -115px;
+            transition: all .5s;
+        }
+        .dropup:hover .dropup-content{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Hoverable Dropup</h2>
+    <p>Example text...</p>
+    <p>Example text...</p>
+    <p>Move the mouse over the button to open the dropup menu.</p>
+
+    <div class="dropup">
+        <button class="dropbtn">Dropup</button>
+        <div class="dropup-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+</body>
+
+</html>

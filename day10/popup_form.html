@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .wrapper{
+            background: whitesmoke;
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 25vh;
+            height: 50vh;
+            position: relative;
+        }
+
+
+        /* Button used to open the contact form - fixed at the bottom of the page */
+        .open-button {
+            position: absolute;
+            bottom: 0px;
+            background: orangered;
+            border: none;
+            color: white;
+            right: 100px;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        /* The popup form - hidden by default */
+        .form-popup {
+            display: none;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px green;
+            width: 250px;
+            border: 1px solid green;
+            position: absolute;
+            bottom: 0;
+            right: 50px;
+        }
+
+        /* Add styles to the form container */
+        .form-container {
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        /* Full-width input fields */
+        .form-container input[type=text],
+        .form-container input[type=password] {
+            height: 35px;
+            outline: none;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+
+        ::placeholder{
+            padding: 10px;
+        }
+
+        /* When the inputs get focus, do something */
+        .form-container input[type=text]:focus,
+        .form-container input[type=password]:focus {
+            border: 2px solid green;
+        }
+
+        /* Set a style for the submit/login button */
+        .form-container .btn {
+            height: 35px;
+            outline: none;
+            border: none;
+            background: orangered;
+            border-radius: 5px;
+            color: white;
+            opacity: .8;
+        }
+
+        /* Add a red background color to the cancel button */
+        .form-container .cancel {
+            background: green;
+        }
+
+        /* Add some hover effects to buttons */
+        .form-container .btn:hover,
+        .open-button:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <h2>Popup Form</h2>
+        <p>Click on the button at the bottom of this page to open the login form.</p>
+        <p>Note that the button and the form is fixed - they will always be positioned to the bottom of the browser
+            window.</p>
+
+        <button class="open-button" onclick="openForm()">Open Form</button>
+
+        <div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+                <h1>Login</h1>
+
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit" class="btn">Login</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openForm() {
+            document.querySelector('.form-popup').style.display='block';
+        }
+
+        function closeForm() {
+            document.querySelector('.form-popup').style.display='none';
+        }
+    </script>
+
+</body>
+
+</html>
