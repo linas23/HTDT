@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <!-- The text field -->
+<input type="text" value="Hello World" id="myInput">
+
+<!-- The button used to copy the text -->
+<button onclick="myFunction()">Copy text</button>
+
+<script>
+    function myFunction(){
+        let textField = document.querySelector("#myInput");
+
+        // select the text from the textfield or the input or textarea
+        textField.select();
+        textField.setSelectionRange(0,99999);
+
+        document.execCommand("copy");
+
+        alert('cppied text is '+ textField.value);
+
+    }
+</script>
+</body>
+</html>

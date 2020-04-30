@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        #my {
+            width: 130px;
+            height: 50px;
+            border: 1px solid red;
+            transition: .75s;
+        }
+
+        #my:focus {
+            width: 100%;
+        }
+        form{
+            display: flex;
+            width: 100%;
+        }
+        input{
+            height: 35px;
+        }
+        #full{
+            width: 100%;
+        }
+        button{
+            font-size: 1.5rem;
+            color: white;
+            width: 100px;
+            background: #1100dd;
+            border: none;
+        }
+        
+        .center{
+            max-width: 400px;
+            margin:  auto;
+        }
+
+        #center{
+            width: 80%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <input type="text" id="my" name="search" placeholder="Search..">
+
+
+    <!-- The form -->
+    <h1>fullwidth</h1>
+    <form class="example" action="action_page.php">
+        <input type="text" id="full" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+    <h1>Centered</h1>
+    <form class="center" action="action_page.php">
+        <input id="center" type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+
+</body>
+
+</html>

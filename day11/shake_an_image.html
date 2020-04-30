@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img:hover{
+            animation: earthquake .5s ease infinite;
+        }
+        @keyframes earthquake {
+            0%{
+                transform: translate(-2px,0px)rotateX(-10deg);
+            }
+            20%{
+                transform: translate(0px,2px)rotateX(10deg);
+            }
+            40%{
+                transform: translate(3px,0px)rotateX(-10deg);
+            }
+            60%{
+                transform: translate(0px,3px)rotateX(10deg);
+            }
+            80%{
+                transform: translate(1px,3px)rotateX(-10deg);
+            }
+            100%{
+                transform: translate(0px,3px)rotateX(10deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <p>Hover over the image:</p>
+<img src="https://images.unsplash.com/photo-1588179884881-986877f31150?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80" alt="Pineapple" width="300" height="300">
+</body>
+</html>
