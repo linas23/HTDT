@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .pagination a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 8px 16px;
+        }
+
+        .pagination a:hover {
+            background: rgb(209, 207, 207);
+        }
+
+        .pagination .active {
+            background: royalblue;
+            color: white;
+        }
+
+        .icon-bar {
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .icon-bar a {
+            padding: 15px;
+            color: white;
+        }
+
+        .facebook {
+            background: royalblue;
+        }
+
+        .twitter {
+            background: rgb(45, 55, 146);
+        }
+
+        .google {
+            background: orangered;
+        }
+
+        .linkedin {
+            background: rgb(24, 98, 133);
+        }
+
+        .youtube {
+            background: red;
+        }
+
+        .content {
+            padding-left: 50px;
+            padding-top: 23px;
+        }
+        .pill-nav{
+            padding: 10px 50px;
+        }
+        .pill-nav a{
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .pill-nav a:hover{
+            background: rgba(128, 128, 128, 0.541);
+        }
+        a.active{
+            background: royalblue;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pagination</h1>
+    <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a href="#">1</a>
+        <a class="active" href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">&raquo;</a>
+    </div>
+
+    <div class="icon-bar">
+        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="google"><i class="fa fa-google"></i></a>
+        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+        <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+    </div>
+
+    <div class="content">
+        <h3>Sticky Social Bar</h3>
+        <p>The sticky social bar will stick to the screen when you scroll.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum quibusdam, labore molestias, magni
+            laboriosam laborum quos impedit aliquid est consequatur unde magnam dicta eligendi officiis illo, facere
+            officia fugit. Doloremque ratione, porro nisi nihil magnam mollitia, illum soluta sint adipisci quod saepe
+            repudiandae repellat alias voluptas deserunt quae error. Libero voluptas id accusamus dolore alias
+            consequatur animi commodi doloribus. Quia obcaecati error illum exercitationem, quibusdam ipsam soluta aut
+            a, dicta nulla praesentium nostrum dolorum veritatis nam alias cum? Ad veniam consequatur porro mollitia
+            reiciendis est repudiandae eligendi. Natus sit pariatur nemo. Ab sapiente repudiandae sint placeat, dolorem
+            non nobis? Nesciunt, accusantium sequi distinctio omnis ducimus tempore laboriosam dignissimos. Aliquam quam
+            explicabo omnis atque odio earum, perspiciatis, molestias magni aperiam nisi facere magnam ex. Hic officiis
+            corrupti aspernatur qui doloremque mollitia facere recusandae unde quis omnis odit officia placeat deleniti
+            nisi, quam illum labore dicta fuga dolores! Aperiam quos libero alias deleniti fuga quidem sapiente minima
+            natus eligendi, autem doloremque molestiae nam eos doloribus voluptatum, aliquam recusandae? Tempore
+            accusantium placeat ut nulla voluptatibus nesciunt laudantium laboriosam voluptatum ad provident aperiam
+            aspernatur, nobis fugit temporibus quaerat minima delectus similique molestias maiores nostrum rem saepe?
+            Aperiam eum tempora, quo fugit reiciendis rerum beatae expedita molestiae dolore, sunt eveniet. Est
+            consectetur illum ipsum praesentium nobis molestiae blanditiis! Soluta illo veniam eaque ea veritatis maxime
+            cumque aliquid voluptates consequatur temporibus officiis, necessitatibus vitae ex sit, fuga repellat libero
+            atque nemo. Molestiae nostrum alias cumque aperiam pariatur sunt ea iure itaque ad sequi, magnam veniam
+            provident nisi, quis maiores quasi voluptatibus totam sed mollitia minus nam. Sequi, officiis. Unde
+            aspernatur incidunt odit corrupti aliquam laudantium, cum saepe est rerum illo eligendi, consectetur
+            adipisci accusamus minima quas laboriosam possimus inventore qui similique quo omnis, nisi corporis nam!
+            Fugit distinctio vel perferendis! Doloremque maxime sit minima cupiditate nihil in ratione accusamus ut
+            quae, et repellat itaque accusantium similique consectetur rem. Eaque molestiae dicta, error id, ipsa
+            accusamus earum suscipit harum dolorem pariatur, eligendi repellat deserunt rerum quisquam adipisci fugiat
+            dolorum dignissimos nulla placeat cumque inventore. Deserunt maiores vitae quidem omnis numquam odio porro
+            sapiente vel esse iste voluptatum consequuntur sunt quasi cumque, dicta at eaque nam quam eligendi, ab nihil
+            pariatur velit praesentium in. Necessitatibus ratione voluptatibus, quia eius non officiis nihil, quod
+            facilis sint qui quasi quam officia! Voluptatibus ducimus cum consectetur optio natus neque fuga incidunt
+            mollitia minima placeat excepturi ipsa culpa tempora inventore corporis, officia eos quibusdam possimus
+            autem, quos tempore laboriosam commodi, et minus. Minus placeat sed dolore. Deserunt molestiae dolore
+            molestias a eum placeat, tempore eos hic ipsum rerum laudantium alias harum qui quis dolorum dolores nobis
+            nam! Labore, necessitatibus assumenda eaque quos adipisci quae autem sequi harum officia quidem rerum, quod
+            eligendi voluptas nisi praesentium dolore asperiores temporibus eos nulla aliquid! Quaerat praesentium ut
+            placeat nemo sapiente voluptate culpa, ullam quasi similique voluptas quidem natus possimus ipsam error
+            eveniet nostrum mollitia, fugiat dolorem quia molestiae sunt, eius debitis quam minima! Dolorum assumenda
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum quibusdam, labore molestias, magni
+            laboriosam laborum quos impedit aliquid est consequatur unde magnam dicta eligendi officiis illo, facere
+            officia fugit. Doloremque ratione, porro nisi nihil magnam mollitia, illum soluta sint adipisci quod saepe
+            repudiandae repellat alias voluptas deserunt quae error. Libero voluptas id accusamus dolore alias
+            consequatur animi commodi doloribus. Quia obcaecati error illum exercitationem, quibusdam ipsam soluta aut
+            a, dicta nulla praesentium nostrum dolorum veritatis nam alias cum? Ad veniam consequatur porro mollitia
+            reiciendis est repudiandae eligendi. Natus sit pariatur nemo. Ab sapiente repudiandae sint placeat, dolorem
+            non nobis? Nesciunt, accusantium sequi distinctio omnis ducimus tempore laboriosam dignissimos. Aliquam quam
+            explicabo omnis atque odio earum, perspiciatis, molestias magni aperiam nisi facere magnam ex. Hic officiis
+            corrupti aspernatur qui doloremque mollitia facere recusandae unde quis omnis odit officia placeat deleniti
+            nisi, quam illum labore dicta fuga dolores! Aperiam quos libero alias deleniti fuga quidem sapiente minima
+            natus eligendi, autem doloremque molestiae nam eos doloribus voluptatum, aliquam recusandae? Tempore
+            accusantium placeat ut nulla voluptatibus nesciunt laudantium laboriosam voluptatum ad provident aperiam
+            aspernatur, nobis fugit temporibus quaerat minima delectus similique molestias maiores nostrum rem saepe?
+            Aperiam eum tempora, quo fugit reiciendis rerum beatae expedita molestiae dolore, sunt eveniet. Est
+            consectetur illum ipsum praesentium nobis molestiae blanditiis! Soluta illo veniam eaque ea veritatis maxime
+            cumque aliquid voluptates consequatur temporibus officiis, necessitatibus vitae ex sit, fuga repellat libero
+            atque nemo. Molestiae nostrum alias cumque aperiam pariatur sunt ea iure itaque ad sequi, magnam veniam
+            provident nisi, quis maiores quasi voluptatibus totam sed mollitia minus nam. Sequi, officiis. Unde
+            aspernatur incidunt odit corrupti aliquam laudantium, cum saepe est rerum illo eligendi, consectetur
+            adipisci accusamus minima quas laboriosam possimus inventore qui similique quo omnis, nisi corporis nam!
+            Fugit distinctio vel perferendis! Doloremque maxime sit minima cupiditate nihil in ratione accusamus ut
+            quae, et repellat itaque accusantium similique consectetur rem. Eaque molestiae dicta, error id, ipsa
+            accusamus earum suscipit harum dolorem pariatur, eligendi repellat deserunt rerum quisquam adipisci fugiat
+            dolorum dignissimos nulla placeat cumque inventore. Deserunt maiores vitae quidem omnis numquam odio porro
+            sapiente vel esse iste voluptatum consequuntur sunt quasi cumque, dicta at eaque nam quam eligendi, ab nihil
+            pariatur velit praesentium in. Necessitatibus ratione voluptatibus, quia eius non officiis nihil, quod
+            facilis sint qui quasi quam officia! Voluptatibus ducimus cum consectetur optio natus neque fuga incidunt
+            mollitia minima placeat excepturi ipsa culpa tempora inventore corporis, officia eos quibusdam possimus
+            autem, quos tempore laboriosam commodi, et minus. Minus placeat sed dolore. Deserunt molestiae dolore
+            molestias a eum placeat, tempore eos hic ipsum rerum laudantium alias harum qui quis dolorum dolores nobis
+            nam! Labore, necessitatibus assumenda eaque quos adipisci quae autem sequi harum officia quidem rerum, quod
+            eligendi voluptas nisi praesentium dolore asperiores temporibus eos nulla aliquid! Quaerat praesentium ut
+            placeat nemo sapiente voluptate culpa, ullam quasi similique voluptas quidem natus possimus ipsam error
+            eveniet nostrum mollitia, fugiat dolorem quia molestiae sunt, eius debitis quam minima! Dolorum assumenda
+            velit iste aut ratione unde asperiores repudiandae, esse autem! Nesciunt.</p>
+    </div>
+
+    <h2>How To Create a Pill Navigation Menu</h2>
+
+    <div class="pill-nav">
+        <a class="active" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+
+</body>
+
+</html>

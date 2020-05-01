@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tooltip{
+            display: inline-block;
+            margin: 50px 100px;
+            border-bottom:1px dotted red;
+            cursor: pointer;
+            position: relative;
+        }
+        .tooltiptext{
+            position: absolute;
+            background: #123;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            left: 0;
+            width: 100%;
+            border-radius: 10px;
+            visibility: hidden;
+        }
+        .tooltiptext::after{
+            content: "";
+            height: 0;
+            width: 0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 8px solid transparent;
+        }
+        .tooltip:hover .tooltiptext{
+            visibility:visible;
+        }
+        .top{
+            top: -45px;
+        }
+        .top.tooltiptext::after{
+            bottom: -15px;
+            border-color:black transparent transparent  transparent ;
+        }
+        .bottom{
+            top: 35px;
+        }
+        .bottom.tooltiptext::after{
+            bottom: 37px;
+            border-color: transparent transparent black transparent  ;
+        }
+        .right{
+            left: 120%;
+        }
+        .right.tooltiptext::after{
+            left: -6px;
+            border-color: transparent black transparent  transparent  ;
+        }
+        .left{
+            left: -120%;
+        }
+        .left.tooltiptext::after{
+            left: 107%;
+            border-color: transparent  transparent   transparent black ;
+        }
+    </style>
+</head>
+<body>
+    <div class="tooltip">Hover over me
+        <span class="tooltiptext top">Tooltip text</span>
+    </div>
+    <div class="tooltip">Hover over me
+        <span class="tooltiptext left">Tooltip text</span>
+    </div>
+    <div class="tooltip">Hover over me
+        <span class="tooltiptext right">Tooltip text</span>
+    </div>
+    <div class="tooltip">Hover over me
+        <span class="tooltiptext bottom">Tooltip text</span>
+    </div>
+</body>
+</html>

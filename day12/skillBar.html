@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 100%;
+            height: 30px;
+            background: gray;
+        }
+        .skills{
+            text-align: center;
+            background: green;
+            height: 100%;
+            color: white;
+            width: 0%;
+            transition: .75s;
+        }
+    </style>
+</head>
+<body>
+    <p>HTML</p>
+<div class="container">
+  <div class="skills html">90%</div>
+</div>
+
+<p>CSS</p>
+<div class="container">
+  <div class="skills css">80%</div>
+</div>
+
+<p>JavaScript</p>
+<div class="container">
+  <div class="skills js">65%</div>
+</div>
+
+<p>PHP</p>
+<div class="container">
+  <div class="skills php">60%</div>
+</div>
+
+<script>
+    setTimeout(() => {
+        document.querySelector(".html").style.width = '90%';
+        document.querySelector(".css").style.width = '80%';
+        document.querySelector(".js").style.width = '65%';
+        document.querySelector(".php").style.width = '60%';
+    }, 50);
+</script>
+</body>
+</html>

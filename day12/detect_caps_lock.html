@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>
+        Detect if Caps Lock is On
+        Try to press the "Caps Lock" key inside the input field:
+    </h3>
+    <p>it doesn't work but the code is fine</p>
+    <input type="text" id="myInput" value="some text">
+    <p class="text" style="color: red;display: none;">CAPS lock is on</p>
+    <script>
+        var input = document.getElementById("myInput");
+
+// Get the warning text
+var text = document.getElementsByClassName("text");
+
+// When the user presses any key on the keyboard, run the function
+input.addEventListener("keyup", function(event) {
+
+  // If "caps lock" is pressed, display the warning text
+  if (event.getModifierState("CapsLock")) {
+    text.style.display = "block";
+  } else {
+    text.style.display = "none"
+  }
+});
+    </script>
+</body>
+</html>

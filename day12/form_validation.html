@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        body{
+            padding: 50px;
+        }
+        .container{
+            background: whitesmoke;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        input{
+            height: 35px;
+            border: none;
+            background: rgba(128, 128, 128, 0.37);
+        }
+        label{
+            margin: 10px 0;
+            font-size: 1.5rem;
+        }
+        input[type="submit"]{
+            margin: 15px 0;
+            background: #11dd11;
+            color: white;
+        }
+        #message{
+            background: whitesmoke;
+            margin-top:  23px;
+            padding: 20px;
+            display: none;
+        }
+        h3{
+            font-size: 1.7rem;
+        }
+        #message p{
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        #message p.invalid{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Password Validation</h3>
+    <p>Try to submit the form.</p>
+
+    <div class="container">
+        <form action="/action_page.php">
+            <label for="usrname">Username</label>
+            <input type="text" id="usrname" name="usrname" required>
+
+            <label for="psw">Password</label>
+            <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <div id="message">
+        <h3>Password must contain the following:</h3>
+        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+        <p id="number" class="invalid">A <b>number</b></p>
+        <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+    </div>
+<script>
+    const password = document.querySelector("#psw");
+    const message = document.querySelector("#message");
+    const letter = document.querySelector("#letter");
+    const capital = document.querySelector("#capital");
+    const number =  document.querySelector("#number");
+    const length =  document.querySelector("#length");
+
+
+    password.addEventListener('keyup',(e)=>{
+        e.preventDefault();
+        message.style.display = 'block';
+        passwordValue = password.value.split("");
+        checkLetter(passwordValue);
+        checkCapital(passwordValue);
+        checkNumber(passwordValue);
+        checkLength(passwordValue);
+    })
+
+
+    checkLetter = password=>{
+        let truthy=false;
+        for(let i = 0 ; i< password.length ; i++){
+            if(password[i].charCodeAt(0) >=97  && password[i].charCodeAt(0) <= 122 ){
+                truthy = true;
+                break;
+            }
+        }
+        AssignColor(truthy,letter);
+
+    }
+    checkCapital = password=>{
+        let truthy=false;
+        for(let i = 0 ; i< password.length ; i++){
+            if(password[i].charCodeAt(0) >=65  && password[i].charCodeAt(0) <= 90 ){
+                truthy = true;
+                break;
+            }
+        }
+
+        AssignColor(truthy,capital);
+
+    }
+    checkNumber = password=>{
+        let truthy=false;
+        for(let i = 0 ; i< password.length ; i++){
+            if(password[i].charCodeAt(0) >=48  && password[i].charCodeAt(0) <= 57 ){
+                truthy = true;
+                break;
+            }
+        }
+
+        AssignColor(truthy,number);
+
+        
+    }
+    checkLength = password=>{
+        let truthy=false;
+        
+        if(password.length >= 8){
+            truthy = true;
+        }
+
+        AssignColor(truthy,length);
+       
+    }
+
+    AssignColor = (truthy,block) =>{
+        if(truthy){
+            block.style.color = 'green';
+        }else{
+            block.style.color = 'red';
+        }
+    }
+
+</script>
+</body>
+
+</html>
