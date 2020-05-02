@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .checked {
+        color: orange;
+    }
+    span{
+        transition: .23s;
+        cursor: pointer;
+    }
+    span:hover{
+        box-shadow: 0px 0px 10px black;
+        transform: scale(1.1);
+    }
+</style>
+</head>
+<body>
+
+<h2>Star Rating</h2>
+<span class="fa fa-3x fa-star" onclick=handleClick(0)></span>
+<span class="fa fa-3x fa-star" onclick=handleClick(1)></span>
+<span class="fa fa-3x fa-star" onclick=handleClick(2)></span>
+<span class="fa fa-3x fa-star" onclick=handleClick(3)></span>
+<span class="fa fa-3x fa-star" onclick=handleClick(4)></span>
+
+
+<script>
+    const spans = document.querySelectorAll('span');
+
+    const handleClick = index =>{
+        spans.forEach(span=>span.classList.remove('checked'));
+        for(let i = 0 ; i<=index ; i++){
+            spans[i].classList.add('checked');
+        }
+    }
+</script>
+
+
+</body>
+</html>

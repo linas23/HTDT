@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            object-fit: cover;
+        }
+        .flip-card{
+            height: 300px;
+            width: 300px;
+            perspective: 500px;
+        }
+        .flip-card-inner{
+            height: 100%;
+            width: 100%;
+            transition: .75s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        .flip-card-back,.flip-card-front{
+            backface-visibility: hidden;
+            height: 100%;
+            width: 100%;
+        }
+        .flip-card-back{
+            background-color: #124;
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            transform: rotateY(180deg);
+        }
+        .flip-card:hover .flip-card-inner{
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.unsplash.com/photo-1529911194209-8578109840df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=60" alt="Avatar" style="width:300px;height:300px;">
+          </div>
+          <div class="flip-card-back">
+            <h1>John Doe</h1>
+            <p>Architect & Engineer</p>
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

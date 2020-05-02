@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .chip{
+            width: 150px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            background: rgba(128, 128, 128, 0.582);
+            border-radius: 23px;
+            color: white;
+            position: relative;
+            margin: 10px 0;
+        }
+        .chip img{
+            margin-right: 10px;
+        }
+        .close{
+            position: absolute;
+            right: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="chip">
+        <img src="https://cdn1.iconfinder.com/data/icons/avatar-2-2/512/Salesman_1-512.png" alt="Person" width="48" height="48">
+        John Doe
+    </div>
+    <div class="chip">
+        <img src="https://cdn1.iconfinder.com/data/icons/avatar-2-2/512/Salesman_1-512.png" alt="Person" width="48" height="48">
+        John Doe
+        <span class="close" onclick="this.parentElement.style.display='none'">&times;</span>
+    </div>
+    <div class="chip">
+        <img src="https://cdn1.iconfinder.com/data/icons/avatar-2-2/512/Salesman_1-512.png" alt="Person" width="48" height="48">
+        John Doe
+        <span class="close" onclick="this.parentElement.style.display='none'">&times;</span>
+    </div>
+    <div class="chip">
+        <img src="https://cdn1.iconfinder.com/data/icons/avatar-2-2/512/Salesman_1-512.png" alt="Person" width="48" height="48">
+        John Doe
+        <span class="close" onclick="this.parentElement.style.display='none'">&times;</span>
+    </div>
+    
+</body>
+</html>

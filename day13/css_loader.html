@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .loader{
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            border: 10px solid gray;
+            border-top-color: red;
+            animation: spin 1s linear infinite ;
+            margin: 10px;
+        }
+
+        .two{
+            border-bottom-color: blue ;
+        }
+
+        .four{
+            border-right-color: chocolate;
+            border-bottom-color: blue ;
+            border-left-color: green;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+    
+</head>
+<body>
+    <h2>How To Create A Loader</h2>
+
+<div class="loader"></div>
+<div class="loader two"></div>
+<div class="loader four"></div>
+
+</body>
+</html>

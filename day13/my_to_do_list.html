@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+        body{
+            background: whitesmoke;
+        }
+        .wrapper{
+            width: 80%;
+            margin: 0 auto;
+        }
+        .header{
+            color: white;
+            height: 25vh;
+            background:#123;
+            text-align: center;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .header > div{
+            width: 100%;
+        }
+        h2{
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        .header input{
+            width: 65%;
+            height: 23px;
+            outline: none;
+            padding-left:20px;
+        }
+        .header input:focus{
+            border: 2px outset orangered;
+        }
+        .addBtn{
+            width: 15%;
+            cursor: pointer;
+            color: white;
+            background: orangered;
+            padding: 6px 10px;
+            border: none;
+            outline: none;
+        }
+
+        ul{
+            padding: 0;
+        }
+        li{
+            list-style: none;
+            padding: 10px;
+            font-size: 18px;
+            position: relative;
+            cursor: pointer;
+        }
+        li .close{
+            position: absolute;
+            right: 0px;
+            padding: 0 10px ;
+        }
+        li:nth-child(odd){
+            background-color: rgba(194, 192, 192, 0.705);
+        }
+        li:nth-child(even){
+            background-color: rgba(194, 192, 192, 0.411);
+        }
+        li.checked{
+            text-decoration: line-through;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="myDIV" class="header">
+            <div>
+                <h2>My To Do List</h2>
+                <input type="text" id="myInput" placeholder="Enter todos...">
+                <button onclick="newElement()" class="addBtn">Add</button>
+            </div>
+        </div>
+        
+        <ul id="myUL">
+            <li>Hit the gym </li>
+            <li class="checked">Pay bills</li>
+            <li>Meet George</li>
+            <li>Buy eggs</li>
+            <li>Read a book</li>
+            <li>Organize office</li>
+        </ul>
+    </div>
+    <script>
+        const input = document.querySelector("#myInput");
+        const ul = document.querySelector("#myUL");
+
+        const appendClose = () =>{
+            const lists = document.querySelectorAll("li");
+
+            lists.forEach(li=>{
+                li.setAttribute('onclick',"handleClick(this)");
+                li.setAttribute('title','click me to mark as done');
+                let span = document.createElement('span');
+                let text = document.createTextNode('\u00D7');
+                span.className = 'close';
+                span.setAttribute('onclick','hideme(this)');
+                span.appendChild(text);
+                li.appendChild(span);
+            });
+        }
+
+        function handleClick(elem){
+            elem.classList.toggle('checked');
+        }
+
+        function newElement(){
+            let text = input.value;
+            let li = document.createElement('li');
+            li.innerHTML = text;
+            ul.appendChild(li);
+            appendClose();
+            input.value = ''
+        }
+
+        function hideme(el){
+            el.parentNode.style.display= 'none'
+        }
+
+        // lists.forEach(li => li.addEventListener('click',handleClick));
+        appendClose();
+    </script>
+</body>
+
+</html>
