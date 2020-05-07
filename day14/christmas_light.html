@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        body{
+            background: black;
+        }
+        ul{
+            display: flex;
+            padding: 0px;
+            justify-content: space-between;
+        }
+        li{
+            list-style: none;
+            width: 30px;
+            height: 60px;
+            background: white;
+            margin: 0 20px ;
+            border-radius: 0px 0px 25px 25px ;
+            position: relative;
+            margin-top: 5px;
+        }
+        .stick{
+            position: relative;
+            width: 2px;
+            left: 50%;
+            top:20%;
+            height: 70%;
+            background: white;
+        }
+        .stick::before,.stick::after{
+            position: absolute;
+            width: 1px;
+            content: '';
+            background: white;
+        }
+        .stick::before{
+            height: 35%;
+            top:60%;
+            left: -5px;
+            transform: rotate(45deg);
+        }
+        .stick::after{
+            left: 5px;
+            top:55%;
+            height: 25%;
+            transform: rotate(-45deg);
+        }
+        li::before{
+            position: absolute;
+            height: 10px;
+            width: 100%;
+            background: red;
+            content: '';
+        }
+        li::after{
+            z-index: -1;
+            position: absolute;
+            width: 50%;
+            height: 10px;
+            background-color: white;
+            content: '';
+            left: 50%;
+            top:-6px;
+            transform: translateX(-50%);
+        }
+        li:nth-child(2n){
+            animation: blinkEven 1s ease  infinite;
+        }
+        li:nth-child(2n+1){
+            animation: blinkOdd 1s ease  infinite;
+        }
+
+        @keyframes blinkEven {
+            0%{
+                background: rgba(255, 255, 0);
+                box-shadow: 0px 8px 10px yellow ;
+            }
+            25%{
+                background: blue;
+                box-shadow: 0px 8px 20px blue ;
+            }
+            50%{
+                background: green;
+                box-shadow: 0px 8px 30px green ;
+            }
+            75%{
+                background: red;
+                box-shadow: 0px 8px 40px red ;
+            }
+            100%{
+                background: royalblue;
+                box-shadow: 0px 8px 50px royalblue ;
+            }
+        }
+        @keyframes blinkOdd {
+            0%{
+                background: blue;
+                box-shadow: 0px 8px 10px blue ;
+            }
+            25%{
+                background: rgba(255, 255, 0);
+                box-shadow: 0px 8px 20px yellow ;
+            }
+            
+            50%{
+                background: orange;
+                box-shadow: 0px 8px 30px orange ;
+            }
+            75%{
+                background:purple;
+                box-shadow: 0px 8px 40px purple ;
+            }
+            100%{
+                background:indigo;
+                box-shadow: 0px 8px 50px indigo ;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        const lists = document.querySelectorAll('li');
+        lists.forEach(li=>{
+            let div = document.createElement('div');
+            div.className = 'stick';
+            li.appendChild(div);
+        })
+    </script>
+</body>
+</html>

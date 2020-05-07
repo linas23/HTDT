@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        #wrapper{
+            width: 50%;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            height: 50vh;
+            background: whitesmoke;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #box{
+            height: 80%;
+            width: 80%;
+            position: relative;
+            background: radial-gradient(rgb(15, 166, 236),rgb(23, 150, 23));
+            margin: 0 auto;
+            transition: all .5s ease;
+        }
+        input{
+            width: 40px;
+            border: 2px solid green;
+            position: absolute;
+            
+        }
+        #borderTopLeftRadius{
+            top: 10%;
+            left: 2%;
+        }
+        #borderTopRightRadius{
+            top: 10%;
+            right: 2%;
+        }
+        #borderBottomLeftRadius{
+            bottom: 10%;
+            left: 2%;
+        }
+        #borderBottomRightRadius{
+            bottom: 10%;
+            right: 2%;
+        }
+        footer{
+            position: absolute;
+            bottom: 0%;
+            height: 25vh;
+            background: whitesmoke;
+            width: 100%;
+            text-align: center;
+            font-size: 23px;
+        }
+    </style>
+</head>
+<body>
+    <main style="text-align: center;">
+        <h1>
+            Insert the values in pixels
+        </h1>
+    </main>
+    <div id="wrapper">
+        <div id="box">
+
+        </div>
+        <input type="text" id="borderTopLeftRadius" >
+        <input type="text" id="borderTopRightRadius" >
+        <input type="text" id="borderBottomLeftRadius" >
+        <input type="text" id="borderBottomRightRadius" >
+    </div>
+    <footer>
+        <h2 style="margin: 0;">Your applied border radius</h2>
+        <br>
+        <div></div>
+    </footer>
+
+    <script>
+
+        const box = document.querySelector("#box");
+        const inputs = document.querySelectorAll('input');
+        const footer = document.querySelector('footer div');
+        let outputArray = [18,19,35,36];
+        updateFooter();
+
+        inputs.forEach(el=>el.addEventListener('input',handleChange));
+        //18 19 35 36
+        function handleChange(){
+            let prop = this.getAttribute('id');
+            box.style[`${prop}`]= this.value + 'px';
+            setTimeout(()=>{
+                updateFooter();
+            },555)
+        }
+            
+
+        function updateFooter(){
+            let html = '';
+            let styles = window.getComputedStyle(box);
+            outputArray.forEach(el=>{
+                html += `${styles[el]} :: ${styles.getPropertyValue(styles[el])} <br>`;
+            })
+            footer.innerHTML = html;
+        }
+
+    </script>
+</body>
+</html>

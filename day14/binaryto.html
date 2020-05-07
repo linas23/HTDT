@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        #myInput{
+            height: 30px;
+            width: 400px;
+            padding: 0 10px;
+            outline: none;
+            border: 1px solid green;
+        }
+        #selection{
+            height: 30px;
+            padding:  0 10px;
+            margin-right: 10px;
+        }
+        #btn{
+            padding: 7px 10px;
+            cursor: pointer;
+            background-color: orangered;
+            outline: none;
+            border: none;
+            color: white;
+        }
+        #result{
+            margin: 20px 0;
+            font-size: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+
+      
+        const app = document.querySelector("#app");
+
+        // header
+        let heading = document.createElement('h1')
+        heading.className = 'heading';
+        heading.style.color = 'red'
+        heading.innerHTML='Convert binary to other base numbers.<br>(with vanilla js)'
+        app.appendChild(heading)
+
+        //  binary input
+        let binaryInput = document.createElement("div");
+        binaryInput.id = 'binaryInput';
+
+        // input
+        let input = document.createElement('input');
+        input.setAttribute('type','text');
+        input.setAttribute('placeholder','enter the binary number...');
+        input.id = 'myInput';
+        binaryInput.appendChild(input);
+
+        app.appendChild(binaryInput);
+
+
+        //  selection list 
+        let selection = document.createElement('h3');
+        selection.innerHTML = 'Select the conversion';
+        selection.style.fontSize = '1.5rem';
+        app.appendChild(selection);
+
+        let select = document.createElement('select');
+        select.id  = 'selection';
+        let options = [
+                        {
+                            "option":'Hexadecimal',
+                            "value" : 16
+                        },
+                        {
+                            "option":'Decimal',
+                            "value" : 10
+                        },
+                        {
+                            "option":'Octal',
+                            "value" : 8
+                        }
+                        ]
+
+        let optionList = options.map(el=>{
+            return `<option value="${el.value}">${el.option}</option>`;
+        })
+        select.innerHTML = optionList;
+
+        app.appendChild(select);
+        
+        //button
+        let button = document.createElement("button");
+        button.textContent = 'Convert';
+        button.id = 'btn';
+        app.appendChild(button);
+
+        let result = document.createElement('div');
+        result.id = 'result';
+
+        app.appendChild(result);
+
+
+
+        // conversion functions;
+        const inputNum = document.querySelector("#myInput");
+        const res = document.querySelector("#result");
+        const  option = document.querySelector("#selection");
+        const btn = document.querySelector("#btn");
+
+
+        btn.addEventListener('click',convertBinary);
+
+        function convertBinary(){
+            let binary = inputNum.value;
+            let choice = option.value;
+
+            switch(choice){
+                case '16': {
+                    let num = parseInt(binary,2).toString(16);
+                    res.textContent = num;
+                }
+                case '8':{
+                    let num = parseInt(binary,2).toString(8);
+                    res.textContent = num;
+                }
+                case '10':{
+                    let num = parseInt(binary,2).toString(10);
+                    res.textContent = num;
+                }
+            }
+
+        }
+
+    </script>
+</body>
+</html>
