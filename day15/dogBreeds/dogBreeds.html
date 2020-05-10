@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <v-app-bar app dark class="blue darken-5 text-center px-12">
+                <v-container>
+                    <v-avatar color="blue darken-1">
+                        <v-icon>mdi-dog</v-icon>
+                    </v-avatar>
+                </v-container>
+            </v-app-bar>
+            <v-content class="grey lighten-3">
+                <v-container>
+                    <v-card class="text-center pa-7">
+                        <div class="headline pb-5">
+                            Get a photo of differet breeds of dog
+                        </div>
+                        <v-select :items="items" solo :full-width="true" dense class="px-12" label="Select breed"
+                            v-model="myDog">
+                        </v-select>
+                        <v-btn @click="searchMyDog">
+                            search
+                        </v-btn>
+                    </v-card>
+                </v-container>
+
+                <v-container>
+                    <v-row :no-gutters="false">
+                        <v-container class="text-center" v-if="load">
+                            <v-progress-circular indeterminate :value="23" color="red"></v-progress-circular>
+                            <v-progress-circular indeterminate :value="23" color="orange"></v-progress-circular>
+                            <v-progress-circular indeterminate :value="23" color="yellow"></v-progress-circular>
+                            <v-progress-circular indeterminate :value="23" color="green"></v-progress-circular>
+                            <v-progress-circular indeterminate :value="23" color="blue"></v-progress-circular>
+                            <v-progress-circular indeterminate :value="23" color="indigo"></v-progress-circular>
+                            <v-progress-circular indeterminate :value="23" color="violet"></v-progress-circular>
+                        </v-container>
+
+                        <v-col v-else v-for="(image,index) in images" ::key="index" cols="12" sm="12" md="6" lg="4">
+                            <v-hover v-slot:default="{ hover }">
+                                <v-card :class="{ 'on-hover': hover }" :elevation="hover ? 12 : 2" color="white" tile>
+                                    <v-img :src="image" :contain="true" max-height="300px">
+                                    </v-img>
+                                </v-card>
+                            </v-hover>
+                        </v-col>
+
+                    </v-row>
+
+                </v-container>
+            </v-content>
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            data() {
+                return {
+                    items: ["Affenpinscher", "African", "Airedale", "Akita", "Appenzeller", "Australian",
+                        "Basenji", "Beagle", "Bluetick", "Borzoi", "Bouvier", "Boxer", "Brabancon",
+                        "Briard", "Buhund", "Bulldog", "Bullterrier", "Cairn", "Cattledog", "Chihuahua",
+                        "Chow", "Clumber", "Cockapoo", "Collie", "Coonhound", "Corgi", "Cotondetulear",
+                        "Dachshund", "Dalmatian", "Dane", "Deerhound", "Dhole", "Dingo", "Doberman",
+                        "Elkhound", "Entlebucher", "Eskimo", "Finnish", "Frise", "Germanshepherd",
+                        "Greyhound", "Groenendael", "Havanese", "Hound", "Husky", "Keeshond", "Kelpie",
+                        "Komondor", "Kuvasz", "Labrador", "Leonberg", "Lhasa", "Malamute", "Malinois",
+                        "Maltese", "Mastiff", "Mexicanhairless", "Mix", "Mountain", "Newfoundland",
+                        "Otterhound", "Ovcharka", "Papillon", "Pekinese", "Pembroke", "Pinscher", "Pitbull",
+                        "Pointer", "Pomeranian", "Poodle", "Pug", "Puggle", "Pyrenees", "Redbone",
+                        "Retriever", "Ridgeback", "Rottweiler", "Saluki", "Samoyed", "Schipperke",
+                        "Schnauzer", "Setter", "Sheepdog", "Shiba", "Shihtzu", "Spaniel", "Springer",
+                        "Stbernard", "Terrier", "Vizsla", "Waterdog", "Weimaraner", "Whippet", "Wolfhound"
+                    ],
+                    images: [],
+                    myDog: null
+                }
+            },
+            async created() {
+                setTimeout(() => {
+                    for (let i = 1; i <= 12; i++) {
+                        this.fetchRandom();
+                    }
+                }, 500)
+            },
+            methods: {
+                async fetchRandom() {
+                    let image = await axios.get('https://dog.ceo/api/breeds/image/random').then(res => res
+                        .data
+                        .message);
+                    this.images.push(image);
+                },
+                async searchMyDog() {
+                    this.images = [];
+                    let images = await axios.get(
+                        `https://dog.ceo/api/breed/${this.myDog.toLowerCase()}/images`).then((res) =>
+                        res.data.message);
+                    this.images = images;
+                }
+            },
+            computed: {
+                load() {
+                    return this.images.length == 0;
+                }
+            }
+        })
+    </script>
+    <style scoped>
+        .v-card {
+            transition: opacity .4s ease-in-out;
+        }
+
+        .v-card:not(.on-hover) {
+            opacity: 0.8;
+        }
+
+        .show-btns {
+            color: rgba(255, 255, 255, 1) !important;
+        }
+    </style>
+</body>
+
+</html>
