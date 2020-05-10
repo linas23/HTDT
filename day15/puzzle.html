@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+  <style>
+    input {
+      border: 1px solid white;
+      background: white;
+      max-width: 70px;
+      margin: 7px;
+      color: black;
+      padding: 10px 20px;
+      font-size: 2rem;
+    }
+
+    input.error {
+      border: 2px outset red;
+      animation: big 1s ease;
+    }
+
+    input.success {
+      border: 2px outset green;
+    }
+
+    input:focus {
+      border: 2px outset orange;
+    }
+
+    #gameOver,
+    #youWon {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      top: 0;
+      height: 100%;
+      display: none;
+    }
+
+    @keyframes big {
+      0% {
+        transform: scale(0.8);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <v-app>
+      <v-hover v-slot:default="{ hover }">
+        <v-card class="text-center purple darken-4" tile height="10vh" :elevation="hover ? 10 : 4">
+          <p class="py-5 display-1 white--text">
+            Solve the puzzle
+          </p>
+        </v-card>
+      </v-hover>
+      <v-content height="90vh" class="indigo darken-4">
+        <div class="text-center white--text px-5">
+          <div class="display-2 pt-6">
+            Get the correct word
+          </div>
+          <v-card color="transparent" flat min-height="333"
+            class="white--text d-flex justify-space-around align-center flex-column">
+            <div id="puzzle">
+              <div class="d-flex flex-no-wrap inputs"></div>
+            </div>
+            <div class="stars">
+              <v-icon x-large dark id="star"> mdi-star </v-icon>
+              <v-icon x-large dark id="star"> mdi-star </v-icon>
+              <v-icon x-large dark id="star"> mdi-star </v-icon>
+              <v-icon x-large dark id="star"> mdi-star </v-icon>
+              <v-icon x-large dark id="star"> mdi-star </v-icon>
+            </div>
+          </v-card>
+        </div>
+        <div id="gameOver">
+          <v-card width="344" height="200" class="mx-auto my-auto d-flex align-center flex-column">
+            <v-card-title class="display-1">
+              Game Over
+            </v-card-title>
+            <v-card-subtitle>
+              Try again to complete the game.
+            </v-card-subtitle>
+            <v-card-text id="correctWord" style="text-align: center;">
+            </v-card-text>
+            <v-card-actions>
+              <v-btn onclick="playAgain()">
+                Play again
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </div>
+        <div id="youWon">
+          <v-card width="344" height="150" class="mx-auto my-auto d-flex align-center flex-column">
+            <v-card-title class="display-1">
+              You won
+            </v-card-title>
+            <v-card-subtitle>
+              Congratulations, you guessed the correct word.
+            </v-card-subtitle>
+            <v-card-actions>
+              <v-btn onclick="playAgain()">
+                Play again
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </div>
+      </v-content>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+  <script>
+    let puzzleWord;
+    getPuzzle();
+
+    new Vue({
+      el: "#app",
+      vuetify: new Vuetify({
+        icons: {
+          iconfont: "mdiSvg", // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
+        },
+      }),
+    });
+
+    let wrongAnswer = 0;
+    let stars = document.querySelectorAll("#star");
+    const gameOver = document.querySelector("#gameOver");
+    const youWon = document.querySelector("#youWon");
+    const correctWord = document.querySelector("#correctWord");
+
+    async function getPuzzle() {
+      let response = await axios.get("http://puzzle.mead.io/puzzle");
+      const {
+        puzzle
+      } = response.data;
+      if (puzzle.length > 15 && puzzle.length > 8) {
+        return getPuzzle();
+      }
+      puzzleWord = puzzle.toUpperCase();
+      console.log(puzzleWord);
+      setInputFields();
+    }
+
+    function setInputFields() {
+      const inputs = document.querySelector(".inputs");
+      inputs.innerHTML = "";
+      let puzzle = puzzleWord.split("");
+      let myRegex = new RegExp("[A-Z]");
+      for (let i = 0; i < puzzle.length; i++) {
+        if (myRegex.test(puzzle[i])) {
+          let input = document.createElement("input");
+          input.setAttribute("type", "text");
+          input.setAttribute("maxlength", 1);
+          input.setAttribute("data-index", i);
+          inputs.appendChild(input);
+        } else {
+          let div = document.createElement("div");
+          div.innerHTML =
+            "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+          inputs.appendChild(div);
+        }
+      }
+      setHint();
+    }
+
+    function setHint() {
+      let puzzle = puzzleWord.split(" ").join("").split("");
+      let inputs = document.querySelectorAll(".inputs input");
+      let hintLength = Math.ceil(inputs.length / 4);
+
+      let randomIndex = Array.from(Array(hintLength + 2), (x, index) => {
+        return Math.floor(Math.random() * inputs.length);
+      });
+      randomIndex.forEach((i) => {
+        inputs[i].value = puzzle[i];
+        inputs[i].setAttribute("disabled", "true");
+      });
+
+      setMyInputs();
+    }
+
+    function setMyInputs() {
+      let myInputs = document.querySelectorAll(".inputs input");
+      myInputs.forEach((input) =>
+        input.addEventListener("keyup", handleKeyPress)
+      );
+    }
+
+    function handleKeyPress() {
+      let puzzle = puzzleWord.split("");
+      let index = this.dataset.index;
+      this.value = this.value.toUpperCase();
+
+      if (puzzle[index] === this.value) {
+        this.classList.add("success");
+        this.setAttribute("disabled", "true");
+      } else {
+        this.classList.add("error");
+        stars[wrongAnswer].style.color = "orangered";
+        wrongAnswer++;
+        setTimeout(() => {
+          this.value = "";
+          this.classList.remove("error");
+        }, 1000);
+      }
+      isGameOver();
+      isGameFinish();
+    }
+
+    function isGameOver() {
+      let inputs = document.querySelectorAll(".inputs input");
+      inputs = [...inputs];
+      const over = inputs.every((input) => {
+        return /[A-Z]/.test(input.value);
+      });
+      if (over) {
+        youWon.style.display = "flex";
+      }
+    }
+
+    function isGameFinish() {
+      if (wrongAnswer == 5) {
+        gameOver.style.display = "flex";
+        correctWord.innerHTML = `The word was ${puzzleWord}`;
+      }
+    }
+
+    function playAgain() {
+      stars.forEach((star) => (star.style.color = "white"));
+      wrongAnswer = 0;
+      getPuzzle();
+      gameOver.style.display = "none";
+      youWon.style.display = "none";
+    }
+  </script>
+</body>
+
+</html>

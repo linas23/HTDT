@@ -1,91 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTDT</title>
     <style>
-        *{
+        * {
             margin: 0px;
             padding: 0px;
         }
-        body{
+
+        body {
             background-color: whitesmoke;
             color: black;
         }
-        .wrapper{
+
+        .wrapper {
             width: 80%;
             margin: 0 auto;
         }
-        .heading{
+
+        .heading {
             text-align: center;
             font-size: 4rem;
         }
-        .projects{
+
+        .projects {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-evenly;
         }
-        .project{
+
+        .project {
             width: 25%;
             margin: 20px 0;
             padding: 20px;
             animation: colorBorder 2s infinite;
         }
-        .day{
+
+        .day {
             font-size: 20px;
         }
-        ul li{
+
+        ul li {
             list-style-type: decimal;
             margin: 10px 0;
         }
-        a{
+
+        a {
             text-decoration: none;
             color: black;
             font-size: 18px;
         }
-        ul{
-            padding: 20px ;
+
+        ul {
+            padding: 20px;
         }
+
         @keyframes colorBorder {
-            0%{
+            0% {
                 color: red;
                 border: 2px solid white;
             }
-            25%{
+
+            25% {
                 border: 2px solid green;
 
             }
-            50%{
+
+            50% {
                 border: 2px solid yellow;
 
             }
-            75%{
+
+            75% {
                 border: 2px solid red;
 
             }
-            100%{
+
+            100% {
                 border: 2px solid blue;
 
             }
         }
-        @media screen and (max-width:900px){
-            .project{
+
+        @media screen and (max-width:900px) {
+            .project {
                 width: 100%;
             }
-            .wrapper{
+
+            .wrapper {
                 padding: 20px;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="wrapper">
         <div class="heading">
             How To Do Things
         </div>
         <div class="projects">
-            
+
             <div class="project">
                 <div class="day">
                     Day 1
@@ -133,7 +151,7 @@
                     <li><a href="./day3/4colLayout.html">Simple 4 column layout</a></li>
                 </ul>
             </div>
-            
+
             <div class="project">
                 <div class="day">
                     Day 4
@@ -277,7 +295,8 @@
                     <li><a href="./day11/3d_flip_image.html">3D flip image</a></li>
                     <li><a href="./day11/image_zoom.html">Image zoom</a></li>
                     <li><a href="./day11/portfolio_gallery.html">Portfolio gallery</a></li>
-                    <li><a href="./day11/portfolio_gallery_with_filtering.html">Portfolio gallery with filtering</a></li>
+                    <li><a href="./day11/portfolio_gallery_with_filtering.html">Portfolio gallery with filtering</a>
+                    </li>
                 </ul>
             </div>
             <div class="project">
@@ -325,6 +344,14 @@
                     <li><a href="./day14/christmas_light.html">Christmas light</a></li>
                 </ul>
             </div>
+            <div class="project">
+                <div class="day">
+                    Day 15
+                </div>
+                <ul>
+                    <li><a href="./day15/puzzle.html">Solve the Puzzle</a></li>
+                </ul>
+            </div>
             <!-- <div class="project">
                 <div class="day">
                     Day 1
@@ -338,4 +365,5 @@
         </div>
     </div>
 </body>
+
 </html>
