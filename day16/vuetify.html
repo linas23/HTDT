@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css"
+      rel="stylesheet"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"
+    />
+  </head>
+
+  <body>
+    <div id="app">
+      <v-app>
+        <v-content>
+          <v-card min-height="100vh" class="green" tile>
+            <v-container>
+              <v-row class="d-flex align-center flex-md-row flex-sm-column">
+                <v-col md="8" sm="12">
+                  <v-img src="./undraw_authentication_fsn5.svg"> </v-img>
+                </v-col>
+                <v-col sm="8" md="4">
+                  <v-card>
+                    <v-card-title class="display-1">
+                      Sign up
+                    </v-card-title>
+                    <v-card-subtitle>
+                      Get yourself into our community
+                    </v-card-subtitle>
+                    <div class="pa-5">
+                      <v-text-field
+                        label="Email Address"
+                        solo
+                        :full-width="true"
+                      >
+                      </v-text-field>
+                      <v-text-field solo label="Username"> </v-text-field>
+                      <v-text-field solo label="password"></v-text-field>
+                    </div>
+                    <div class="text-center">
+                      <v-btn class="warning">
+                        Sign up
+                      </v-btn>
+                      <v-card-text>
+                        Already have an account ? <a href="#"> login here</a>
+                      </v-card-text>
+                    </div>
+                  </v-card>
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-card>
+        </v-content>
+      </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        vuetify: new Vuetify(),
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color cycle</title>
+    <style>
+        input {
+            height: 45px;
+            width: 300px;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+
+<body style="transition: all .25s ease;">
+    <div id="wrapper" style="color: red; text-align: center; font-size: 1.8rem;">
+        <h2>Enter the starting color in hexadecimal format (#123abc)</h2> <br>
+        <input type="text" placeholder="hex value" value='#000000' maxlength="7"> <br>
+        <h1>the color in the background will change every .5 seconds</h1>
+        <h3>specify an increment value for each color component that will be added to that component every .5 second
+        </h3>
+        <input type="number" value="23" placeholder="Increment in color value">
+        <br> <br>
+        <button onclick="start()">start</button>
+        <button onclick="stop()">stop</button>
+    </div>
+
+    <script>
+        // ffffff = 16777215;
+        const body = document.body;
+        const input = document.querySelector("input[type='text']");
+        const incInput = document.querySelector("input[type='number']")
+
+        let incValue, hexValue;
+        let stopper = false;
+
+        let cycle = function () {
+            if (!stopper) {
+                let newValue = calcNew(hexValue);
+                body.style.background = `${newValue}`;
+                hexValue = newValue;
+            }
+        }
+
+        function start() {
+            hexValue = input.value;
+            incValue = incInput.value;
+            stopper = false;
+            setInterval(cycle, 500);
+        }
+
+        function stop() {
+            stopper = true;
+        }
+
+        function calcNew(val) {
+            let value = val.slice(1);
+            let todec = parseInt(value, 16).toString(10)
+            let inc = parseInt(todec) + parseInt(incValue);
+            if (inc > 16777215) {
+                return '#000000';
+            } else if (inc < 99999) {
+                inc = inc.toString().split("");
+                while (inc.length != 6) {
+                    inc.unshift(0);
+                }
+                return `#${(inc.join("")).toString(16)}`
+            } else {
+                return `#0${inc.toString(16)}`
+            }
+
+        }
+
+        // console.log((parseInt('f', 16).toString(10)))
+    </script>
+</body>
+
+</html>
